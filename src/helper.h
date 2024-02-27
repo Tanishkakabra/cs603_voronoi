@@ -21,4 +21,7 @@ void saveEdgelistToCSV(const std::vector<std::pair<Point *, Point *>> &edgelist,
 // for bounding box, you have the the map with start found and end nullpointer. if i have the 2 points, i can find
 // their perpendicular bisector and then find the intersection with the bounding box. Lessgooo. Altho konsa direction wo
 // ek baar dekhna padega.
+// comparators may have to be changed, since comparison may be buggy.
+// should i clean up my queue to avoid repetetive meows?
+// maybe for comparison i need to use the fabs function as well
 #endif // HELPER_H
