@@ -62,7 +62,7 @@ private:
 
     void add_edge(Site s, Point *event);
 
-    Point find_bound_box_intersection(Site s, EdgeData &edge);
+    Point find_bound_box_intersection(Site s);
 
     void print_edgemap();
 

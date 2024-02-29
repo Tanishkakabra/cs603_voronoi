@@ -15,13 +15,13 @@ void Voronoi::construct(const std::vector<Point> &points)
     // Initialize event queue with leaf events
     for (long unsigned int i = 0; i < points.size(); ++i)
     {
-        if (points[i].x < BOUNDminx)
+        if (points[i].x < BOUNDminx && points[i].x != MIN_DOUBLE)
             BOUNDminx = points[i].x;
-        if (points[i].x > BOUNDmaxx)
+        if (points[i].x > BOUNDmaxx && points[i].x != MAX_DOUBLE)
             BOUNDmaxx = points[i].x;
-        if (points[i].y < BOUNDminy)
+        if (points[i].y < BOUNDminy && points[i].y != MIN_DOUBLE)
             BOUNDminy = points[i].y;
-        if (points[i].y > BOUNDmaxy)
+        if (points[i].y > BOUNDmaxy && points[i].y != MAX_DOUBLE)
             BOUNDmaxy = points[i].y;
         Q.push(points[i]);
     }
@@ -51,6 +51,16 @@ void Voronoi::construct(const std::vector<Point> &points)
         *newevent = Q.top();
         Q.pop();
         sweeper = *newevent;
+
+        if (newevent->x > BOUNDmaxx && newevent->x != MAX_DOUBLE)
+            BOUNDmaxx = newevent->x;
+        if (newevent->x < BOUNDminx && newevent->x != MIN_DOUBLE)
+            BOUNDminx = newevent->x;
+        if (newevent->y > BOUNDmaxy && newevent->y != MAX_DOUBLE)
+            BOUNDmaxy = newevent->y;
+        if (newevent->y < BOUNDminy && newevent->y != MIN_DOUBLE)
+            BOUNDminy = newevent->y;
+
         // cout << "Before even calling site or circle event2" << endl;
         // print_T();
 
@@ -425,15 +435,22 @@ void Voronoi::finalizeDiagram()
         }
         else if (it->second.start != nullptr && it->second.end == nullptr) // half edge
         {
-            // Point p = find_bound_box_intersection(it->first, it->second);
-            // it->second.end = &p;
-            // edgelist.push_back(make_pair(it->second.start, it->second.end));
+            Point *p = new Point();
+            *p = find_bound_box_intersection(it->first);
+            it->second.end = p;
+            cout << "Found bound box intersection: ";
+            cout << p->x << ", " << p->y << endl;
+            cout << it->second.start->x << ", " << it->second.start->y << endl;
+            cout << it->second.end->x << ", " << it->second.end->y << endl;
+            cout << it->first.first->x << ", " << it->first.first->y << "   " << it->first.second->x << ", " << it->first.second->y << endl;
+            edgelist.push_back(make_pair(it->second.start, it->second.end));
         }
         else
         {
             cout << "UMMM how is this happening?" << endl;
         }
     }
+    cout << "Bounding values: " << BOUNDminx << ", " << BOUNDmaxx << ", " << BOUNDminy << ", " << BOUNDmaxy << endl;
 }
 
 double Voronoi::parabola_at_x(Point *p)
@@ -488,7 +505,7 @@ Point *Voronoi::findLeaf(std::multiset<Site, ComparatorSet>::iterator next, std:
     return nullptr;
 }
 
-Point Voronoi::find_bound_box_intersection(Site s, EdgeData &edge)
+Point Voronoi::find_bound_box_intersection(Site s)
 {
     // calculate perpendicular bisector of the 2 points
     Point *p = s.first;
@@ -496,45 +513,24 @@ Point Voronoi::find_bound_box_intersection(Site s, EdgeData &edge)
     // Point *r = edge.vertex3;
     double x = find_breakpoint(p, q, s.n);
     double y = parabolaatx(p, x);
+    if (x == 0 && y == 0)
+        cout << "Panik! found the 0000000000000000000000000000000000000000000000000" << endl;
+    // if (x > BOUNDmaxx)
+    // {
+    //     x = BOUNDmaxx;
+    //     y = parabolaatx(p, x);
+    // }
+    // if (x < BOUNDminx)
+    // {
+    //     x = BOUNDminx;
+    //     y = parabolaatx(p, x);
+    // }
+    // if (y > BOUNDmaxy)
+    // {
+    //     y = BOUNDmaxy;
+    //     x = edge.start->x + y *
+    // }
     return {x, y, false};
-
-    // double m1 = -1 / m;
-    // double c1 = p->y - m1 * p->x; // y = m1x + c1 = line joining p and q
-    // // now i need to find point of intersection with bounding box, and compare them with the 3rd point.
-
-    // double x1, y1;
-
-    /*if (m * BOUNDmaxx + c <= BOUNDmaxy && m * BOUNDmaxx + c >= BOUNDminy)
-    { // intersection at x max
-        x1 = BOUNDmaxx;
-        y1 = m * BOUNDmaxx + c;
-        if ((m1 * x1 + c1 - y1) * (dirsetter) < 0)
-            return {x1, y1, false};
-    }
-    if (m * BOUNDminx + c <= BOUNDmaxy && m * BOUNDminx + c >= BOUNDminy)
-    {
-        x1 = BOUNDminx;
-        y1 = m * BOUNDmaxx + c;
-        if ((m1 * x1 + c1 - y1) * (dirsetter) < 0)
-            return {x1, y1, false};
-    }
-    if ((BOUNDmaxy - c) / m >= BOUNDminx && (BOUNDmaxy - c) / m <= BOUNDmaxx)
-    {
-        y1 = BOUNDmaxy;
-        x1 = (BOUNDmaxy - c) / m;
-        if ((m1 * x1 + c1 - y1) * (dirsetter) < 0)
-            return {x1, y1, false};
-    }
-    if ((BOUNDminy - c) / m >= BOUNDminx && (BOUNDminy - c) / m <= BOUNDmaxx)
-    {
-        y1 = BOUNDminy;
-        x1 = (BOUNDmaxy - c) / m;
-        if ((m1 * x1 + c1 - y1) * (dirsetter) < 0)
-            return {x1, y1, false};
-    }
-
-    cout << "Ummm bounding box error??" << endl;
-    return {MIN_DOUBLE, MAX_DOUBLE, false};*/
 }
 
 void Voronoi::print_edgemap()
