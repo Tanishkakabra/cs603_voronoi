@@ -56,8 +56,6 @@ private:
     void finalizeDiagram();
 
     // Function to find the arc vertically above a point
-    std::multiset<Site, ComparatorSet>::iterator findArcAbove(Point &event);
-
     Point *findLeaf(std::multiset<Site, ComparatorSet>::iterator next, std::multiset<Site, ComparatorSet>::iterator prev);
 
     // void add_to_edge_map(Point *pl, Point *q, Point *pr, Point *event);

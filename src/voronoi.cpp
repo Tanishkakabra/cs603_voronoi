@@ -127,7 +127,7 @@ void Voronoi::handleSiteEvent(Point &event)
     // print_T();
     // cout << event.x << "," << event.y << endl;
 
-    circlemap[{pl, q, pr}] = 0;
+    // circlemap[{pl, q, pr}] = 0;
 
     // inserted a new site huihuihui. 0 and 1 for both combinations hehe
     double m = (q->y - event.y) / (-q->x + event.x);
@@ -151,7 +151,7 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "finding circle: " << pl->x << ", " << pl->y << "   " << q->x << ", " << q->y << "   " << event.x << ", " << event.y << endl;
     Point circ = find_circumcentre(pl, q, &event);
     // cout << "Circle coordinates be like: " << circ.x << ", " << circ.y << endl;
-    if (circ.isCircleEvent == 1)
+    if (circ.isCircleEvent == 1 && circlemap[{pl, q, &event}] != -1)
     {
         // cout << "Watch my circle coordinates" << endl;
         // cout << circ.x << ", " << circ.y << endl;
@@ -162,14 +162,14 @@ void Voronoi::handleSiteEvent(Point &event)
         // cout << "After circlemap" << endl;
         // print_circlemap();
     }
-
+    // cout << "MEOWMEOWMEOWMEOWMEOWMEOWMEOWMMEOJDIUWCWBCUBVUUUUUUUUUUUUUUUUUUU" << endl;
     Point circ2 = find_circumcentre(&event, q, pr);
     // cout << Point circ2 = find_circumcentre(&event, q, pr);
     // cout << "Circle coordinates be like: " << circ2.x << ", " << circ2.y << endl;
-    if (circ2.isCircleEvent == 1 && !(circ2.x == circ.x && circ2.y == circ.y && circ2.isCircleEvent == circ.isCircleEvent))
+    if (circ2.isCircleEvent == 1 && !(circ2.x == circ.x && circ2.y == circ.y && circ2.isCircleEvent == circ.isCircleEvent) && circlemap[{&event, q, pr}] != -1)
     {
-        // cout << "Watch my circle coordinates" << endl;
-        // cout << circ2.x << ", " << circ2.y << endl;
+        //     cout << "Watch my circle coordinates" << endl;
+        //     cout << circ2.x << ", " << circ2.y << endl;
         Q.push(circ2);
         // cout << "Before circlemap" << endl;
         // print_circlemap();
@@ -190,6 +190,8 @@ void Voronoi::handleCircleEvent(Point &event)
     // print_T();
     // print_circlemap();
     std::multiset<Site, ComparatorSet>::iterator next = T.upper_bound({&event, &event, 0});
+    cout << "Next for circle event is" << endl;
+    cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
     if (next == T.begin())
     {
         // cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
@@ -211,6 +213,7 @@ void Voronoi::handleCircleEvent(Point &event)
     std::multiset<Site, ComparatorSet>::iterator prev = --curr; // prev and curr converge, next ki zarurat nhi i think
     curr++;
 
+    // to call out false alarms
     if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) > 0.0001 || fabs(find_breakpoint(curr->first, curr->second, curr->n) - event.x) > 0.0001)
     {
         cout << "FALSE ALARM I REPEAT FALSE ALARM AAAAAAA" << endl;
@@ -281,11 +284,15 @@ void Voronoi::handleCircleEvent(Point &event)
         s = {pl, pr, 0};
         T.insert(s);
     }
-    else
+    else if (fabs(find_breakpoint(pl, pr, 1) - event.x) < 0.0001)
     {
         // cout << "Ill let you know when i get here 1" << endl;
         s = {pl, pr, 1};
         T.insert(s);
+    }
+    else
+    {
+        cout << "Ummm how the hap is this fuckening?" << endl;
     }
     // cout << "Purely for debugging purposes1" << endl;
     // print_T();
@@ -354,7 +361,10 @@ void Voronoi::handleCircleEvent(Point &event)
     if (circ.isCircleEvent == 1 && circlemap[{pl2, q2, pr2}] != -1)
     {
         Q.push(circ);
-        // cout << "Before circlemapc1" << endl;
+        cout << "Before circlemapc1" << endl;
+        cout << circ.x << ", " << circ.y << endl;
+        cout << "pl2 q2 pr2" << endl;
+        cout << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << "   " << pr2->x << ", " << pr2->y << endl;
         // print_circlemap();
         circlemap[{pl2, q2, pr2}] = 1;
         // cout << "After circlemapc1" << endl;
@@ -365,7 +375,10 @@ void Voronoi::handleCircleEvent(Point &event)
     if (circ2.isCircleEvent == 1 && circlemap[{pll2, pl2, q2}] != -1 && !(circ2.x == circ.x && circ2.y == circ.y && circ2.isCircleEvent == circ.isCircleEvent))
     {
         Q.push(circ2);
-        // cout << "Before circlemapc2" << endl;
+        cout << "Before circlemapc2" << endl;
+        cout << circ2.x << ", " << circ2.y << endl;
+        cout << "pll2 pl2 q2" << endl;
+        cout << pll2->x << ", " << pll2->y << "   " << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << endl;
         // print_circlemap();
         circlemap[{pll2, pl2, q2}] = 1;
         // cout << "After circlemapc2" << endl;
@@ -394,54 +407,6 @@ void Voronoi::add_edge(Site s, Point *event)
         cout << "UMMM how is this happening? edgemap error" << endl;
     }
 }
-
-/*void Voronoi::add_to_edge_map(Point *pl, Point *q, Point *pr, Point *event)
-{
-    cout << "Adding to edge map" << endl;
-    // Implementation of adding new half-edge records to the edge map
-    // You need to implement this function
-    if (edgemap[{pl, q}].start == nullptr) // start edge
-    {
-        edgemap[{pl, q}].start = event;
-        edgemap[{pl, q}].vertex3 = pr;
-    }
-    else if (edgemap[{pl, q}].end == nullptr)
-    {
-        edgemap[{pl, q}].end = event; // edge complete
-    }
-    else
-    {
-        cout << "UMMM how is this happening?  edgemap error1" << endl;
-    }
-
-    if (edgemap[{q, pr}].start == nullptr) // start edge
-    {
-        edgemap[{q, pr}].start = event;
-        edgemap[{q, pr}].vertex3 = pl;
-    }
-    else if (edgemap[{q, pr}].end == nullptr)
-    {
-        edgemap[{q, pr}].end = event; // edge complete
-    }
-    else
-    {
-        cout << "UMMM how is this happening? edgemap error2" << endl;
-    }
-
-    if (edgemap[{pl, pr}].start == nullptr) // start edge
-    {
-        edgemap[{pl, pr}].start = event;
-        edgemap[{pl, pr}].vertex3 = q;
-    }
-    else if (edgemap[{pl, pr}].end == nullptr)
-    {
-        edgemap[{pl, pr}].end = event; // edge complete
-    }
-    else
-    {
-        cout << "UMMM how is this happening? edgemap error3" << endl;
-    }
-}*/
 
 void Voronoi::finalizeDiagram()
 {
@@ -488,11 +453,6 @@ double Voronoi::parabolaatx(Point *p, double x)
     double h = sweeper.y;
 
     return ((x - x1) * (x - x1) + y1 * y1 - h * h) / (2 * y1 - 2 * h);
-}
-
-std::multiset<Site, ComparatorSet>::iterator Voronoi::findArcAbove(Point &event)
-{
-    return T.upper_bound({&event, &event, 0}); // returns iterator in tree to pair > the given value.
 }
 
 Point *Voronoi::findLeaf(std::multiset<Site, ComparatorSet>::iterator next, std::multiset<Site, ComparatorSet>::iterator prev)

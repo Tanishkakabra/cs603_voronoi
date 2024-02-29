@@ -63,8 +63,18 @@ double find_breakpoint(Point *p1, Point *p2, int n)
         return c;
 
     double ans;
-    if (b * b - 4 * a * c1 < 0)
+    if (b * b - 4 * a * c1 < -0.0001)
+    {
+        cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
+        cout << b * b - 4 * a * c1 << endl;
         return MAX_DOUBLE;
+    }
+
+    if (b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
+    {
+        return -b / (2 * a);
+    }
+
     if (n == 0)
         ans = ((-1) * b - sqrt(b * b - 4 * a * c1)) / (2 * a);
     else if (n == 1)
@@ -85,27 +95,29 @@ bool ComparatorSet::operator()(Site p1, Site p2) const
 {
     double ans1 = find_breakpoint(p1.first, p1.second, p1.n);
     double ans2 = find_breakpoint(p2.first, p2.second, p2.n);
-    if (fabs(ans1 - ans2) < 0.0001)
-    { // same x coordinate for breakpoint, ab kya karu?
-        if (p1.first->x > p2.first->x)
-            return true;
-        else if (p1.first->x < p2.first->x)
-            return false;
-        else if (p1.first->y > p2.first->y)
-            return true;
-        else if (p1.first->y < p2.first->y)
-            return false;
-        else if (p1.second->x > p2.second->x)
-            return true;
-        else if (p1.second->x < p2.second->x)
-            return false;
-        else if (p1.second->y > p2.second->y)
-            return true;
-        else if (p1.second->y < p2.second->y)
-            return false;
-    }
-
-    return ans1 < ans2;
+    // if (fabs(ans1 - ans2) < 0.0001)
+    // { // same x coordinate for breakpoint, ab kya karu?
+    //     if (p1.first->x > p2.first->x)
+    //         return true;
+    //     else if (p1.first->x < p2.first->x)
+    //         return false;
+    //     else if (p1.first->y > p2.first->y)
+    //         return true;
+    //     else if (p1.first->y < p2.first->y)
+    //         return false;
+    //     else if (p1.second->x > p2.second->x)
+    //         return true;
+    //     else if (p1.second->x < p2.second->x)
+    //         return false;
+    //     else if (p1.second->y > p2.second->y)
+    //         return true;
+    //     else if (p1.second->y < p2.second->y)
+    //         return false;
+    // }
+    if (fabs(ans1 - ans2) > 0.0001)
+        return ans1 < ans2;
+    else
+        return false;
 }
 
 bool ComparatorQueue::operator()(Point p1, Point p2) const
@@ -147,6 +159,8 @@ Point find_circumcentre(Point *p1, Point *p2, Point *p3)
     {
         double slopeAB = (-p2->x + p1->x) / (p2->y - p1->y);
         double slopeBC = (-p3->x + p2->x) / (p3->y - p2->y);
+        if (slopeAB == slopeBC)
+            return {MAX_DOUBLE, MAX_DOUBLE, -1};
 
         // Calculate circumcenter coordinates
         x_U = (midAB.y - midBC.y + slopeBC * midBC.x - slopeAB * midAB.x) / (slopeBC - slopeAB);
