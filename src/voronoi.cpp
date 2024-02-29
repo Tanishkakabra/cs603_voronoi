@@ -411,12 +411,10 @@ void Voronoi::add_edge(Site s, Point *event)
 {
     if (edgemap[s].start == nullptr)
     {
-        cout << "Started edge" << event->x << ", " << event->y << endl;
         edgemap[s].start = event;
     }
     else if (edgemap[s].end == nullptr)
     {
-        cout << "Ended edge" << edgemap[s].start->x << ", " << edgemap[s].start->y << "   " << event->x << ", " << event->y << endl;
         edgemap[s].end = event;
     }
     else
