@@ -45,8 +45,8 @@ void Voronoi::construct(const std::vector<Point> &points)
     {
         // cout << "Before even calling site or circle event1" << endl;
         // print_Q();
-        print_T();
-        print_Q();
+
+        // print_Q();
         Point *newevent = new Point();
         *newevent = Q.top();
         Q.pop();
@@ -79,7 +79,7 @@ void Voronoi::construct(const std::vector<Point> &points)
             handleCircleEvent((*newevent)); // Placeholder for circle event handling
         }
         // cout << "After handling event" << endl;
-        // print_T();
+        print_T();
         // print_circlemap();
         // delete newevent;
     }
@@ -111,6 +111,11 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "Before1" << endl;
     std::multiset<Site, ComparatorSet>::iterator prev = --next;
     next++;
+    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - find_breakpoint(next->first, next->second, next->n)) < 0.0001)
+    {
+        cout << "Insertion at a breakpoint bro" << endl;
+        sweeper.y += 0.0001;
+    }
     // cout << "Prev is: " << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
     // cout << "Before2" << endl;
     Point *q = findLeaf(next, prev);
@@ -163,8 +168,8 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "Circle coordinates be like: " << circ.x << ", " << circ.y << endl;
     if (circ.isCircleEvent == 1 && circlemap[{pl, q, &event}] != -1)
     {
-        // cout << "Watch my circle coordinates" << endl;
-        // cout << circ.x << ", " << circ.y << endl;
+        cout << "Watch my circle coordinates" << endl;
+        cout << circ.x << ", " << circ.y << endl;
         Q.push(circ);
         // cout << "Before circlemap" << endl;
         // print_circlemap();
@@ -178,8 +183,8 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "Circle coordinates be like: " << circ2.x << ", " << circ2.y << endl;
     if (circ2.isCircleEvent == 1 && !(circ2.x == circ.x && circ2.y == circ.y && circ2.isCircleEvent == circ.isCircleEvent) && circlemap[{&event, q, pr}] != -1)
     {
-        //     cout << "Watch my circle coordinates" << endl;
-        //     cout << circ2.x << ", " << circ2.y << endl;
+        cout << "Watch my circle coordinates" << endl;
+        cout << circ2.x << ", " << circ2.y << endl;
         Q.push(circ2);
         // cout << "Before circlemap" << endl;
         // print_circlemap();
@@ -200,8 +205,8 @@ void Voronoi::handleCircleEvent(Point &event)
     // print_T();
     // print_circlemap();
     std::multiset<Site, ComparatorSet>::iterator next = T.upper_bound({&event, &event, 0});
-    cout << "Next for circle event is" << endl;
-    cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
+    // cout << "Next for circle event is" << endl;
+    // cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
     if (next == T.begin())
     {
         // cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
@@ -237,13 +242,13 @@ void Voronoi::handleCircleEvent(Point &event)
         cout << "Ummm how is this happening? False alarm" << endl;
         return;
     }
-    cout << "Event.x = " << event.x << endl;
-    cout << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
-    cout << find_breakpoint(prev->first, prev->second, prev->n) << endl;
-    cout << curr->first->x << ", " << curr->first->y << "   " << curr->second->x << ", " << curr->second->y << "   " << curr->n << endl;
-    cout << find_breakpoint(curr->first, curr->second, curr->n) << endl;
-    cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
-    cout << find_breakpoint(next->first, next->second, next->n) << endl;
+    // cout << "Event.x = " << event.x << endl;
+    // cout << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
+    // cout << find_breakpoint(prev->first, prev->second, prev->n) << endl;
+    // cout << curr->first->x << ", " << curr->first->y << "   " << curr->second->x << ", " << curr->second->y << "   " << curr->n << endl;
+    // cout << find_breakpoint(curr->first, curr->second, curr->n) << endl;
+    // cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
+    // cout << find_breakpoint(next->first, next->second, next->n) << endl;
 
     Point *q = findLeaf(curr, prev);
 
@@ -258,8 +263,8 @@ void Voronoi::handleCircleEvent(Point &event)
     else
         pr = curr->first;
     // q disappears, pr and pl remain.
-    cout << "pl q pr found" << endl;
-    cout << pl->x << ", " << pl->y << "   " << q->x << ", " << q->y << "   " << pr->x << ", " << pr->y << endl;
+    // cout << "pl q pr found" << endl;
+    // cout << pl->x << ", " << pl->y << "   " << q->x << ", " << q->y << "   " << pr->x << ", " << pr->y << endl;
     if (circlemap[{pl, q, pr}] != 1) // if the circle event is false alarm, then dont do anything
         return;
     if (pl->x == MAX_DOUBLE || pl->x == MIN_DOUBLE || pr->x == MAX_DOUBLE || pr->x == MIN_DOUBLE || q->x == MAX_DOUBLE || q->x == MIN_DOUBLE)
@@ -331,33 +336,33 @@ void Voronoi::handleCircleEvent(Point &event)
     // cout << "check new circle events between next curr and prev curr and the new node" << endl;
     // cout << prev2->first->x << ", " << prev2->first->y << "   " << prev2->second->x << ", " << prev2->second->y << "   " << prev2->n << endl;
     // cout << find_breakpoint(prev2->first, prev2->second, prev2->n) << endl;
-    cout << s.first->x << ", " << s.first->y << "   " << s.second->x << ", " << s.second->y << "   " << s.n << endl;
-    cout << find_breakpoint(s.first, s.second, s.n) << endl;
-    cout << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
-    cout << find_breakpoint(prev->first, prev->second, prev->n) << endl;
-    cout << curr->first->x << ", " << curr->first->y << "   " << curr->second->x << ", " << curr->second->y << "   " << curr->n << endl;
-    cout << find_breakpoint(curr->first, curr->second, curr->n) << endl;
-    cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
-    cout << find_breakpoint(next->first, next->second, next->n) << endl;
-    print_T();
+    // cout << s.first->x << ", " << s.first->y << "   " << s.second->x << ", " << s.second->y << "   " << s.n << endl;
+    // cout << find_breakpoint(s.first, s.second, s.n) << endl;
+    // cout << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
+    // cout << find_breakpoint(prev->first, prev->second, prev->n) << endl;
+    // cout << curr->first->x << ", " << curr->first->y << "   " << curr->second->x << ", " << curr->second->y << "   " << curr->n << endl;
+    // cout << find_breakpoint(curr->first, curr->second, curr->n) << endl;
+    // cout << next->first->x << ", " << next->first->y << "   " << next->second->x << ", " << next->second->y << "   " << next->n << endl;
+    // cout << find_breakpoint(next->first, next->second, next->n) << endl;
+    // print_T();
     // check new circle events between next curr and prev curr
     //                        prev  curr  next
     // let prev curr next = pll2  pl2   q2   pr2
-    cout << "Adding new circle events" << endl;
+    // cout << "Adding new circle events" << endl;
     Point *q2 = findLeaf(next, curr);
-    cout << "pll2 pl2 q2 pr2" << endl;
+    // cout << "pll2 pl2 q2 pr2" << endl;
     Point *pl2;
     if (curr->first == q2)
         pl2 = curr->second;
     else
         pl2 = curr->first;
-    cout << "pll2 pl2 q2 pr2" << endl;
+    // cout << "pll2 pl2 q2 pr2" << endl;
     Point *pr2;
     if (next->first == q2)
         pr2 = next->second;
     else
         pr2 = next->first;
-    cout << "pll2 pl2 q2 pr2" << endl;
+    // cout << "pll2 pl2 q2 pr2" << endl;
     Point *pll2;
     if (prev->first == pl2)
         pll2 = prev->second;
@@ -371,10 +376,10 @@ void Voronoi::handleCircleEvent(Point &event)
     if (circ.isCircleEvent == 1 && circlemap[{pl2, q2, pr2}] != -1)
     {
         Q.push(circ);
-        cout << "Before circlemapc1" << endl;
+        cout << "Watch my circle eventt" << endl;
         cout << circ.x << ", " << circ.y << endl;
-        cout << "pl2 q2 pr2" << endl;
-        cout << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << "   " << pr2->x << ", " << pr2->y << endl;
+        // cout << "pl2 q2 pr2" << endl;
+        // cout << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << "   " << pr2->x << ", " << pr2->y << endl;
         // print_circlemap();
         circlemap[{pl2, q2, pr2}] = 1;
         // cout << "After circlemapc1" << endl;
@@ -385,10 +390,10 @@ void Voronoi::handleCircleEvent(Point &event)
     if (circ2.isCircleEvent == 1 && circlemap[{pll2, pl2, q2}] != -1 && !(circ2.x == circ.x && circ2.y == circ.y && circ2.isCircleEvent == circ.isCircleEvent))
     {
         Q.push(circ2);
-        cout << "Before circlemapc2" << endl;
+        cout << "Watch my circle eventt" << endl;
         cout << circ2.x << ", " << circ2.y << endl;
-        cout << "pll2 pl2 q2" << endl;
-        cout << pll2->x << ", " << pll2->y << "   " << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << endl;
+        // cout << "pll2 pl2 q2" << endl;
+        // cout << pll2->x << ", " << pll2->y << "   " << pl2->x << ", " << pl2->y << "   " << q2->x << ", " << q2->y << endl;
         // print_circlemap();
         circlemap[{pll2, pl2, q2}] = 1;
         // cout << "After circlemapc2" << endl;

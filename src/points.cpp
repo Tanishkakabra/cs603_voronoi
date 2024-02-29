@@ -70,7 +70,7 @@ double find_breakpoint(Point *p1, Point *p2, int n)
         return MAX_DOUBLE;
     }
 
-    if ( b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
+    if (b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
     {
         return -b / (2 * a);
     }
@@ -159,7 +159,7 @@ Point find_circumcentre(Point *p1, Point *p2, Point *p3)
     {
         double slopeAB = (-p2->x + p1->x) / (p2->y - p1->y);
         double slopeBC = (-p3->x + p2->x) / (p3->y - p2->y);
-        if(slopeAB == slopeBC)
+        if (slopeAB == slopeBC)
             return {MAX_DOUBLE, MAX_DOUBLE, -1}; // 3 points in a line (collinear)
         // Calculate circumcenter coordinates
         x_U = (midAB.y - midBC.y + slopeBC * midBC.x - slopeAB * midAB.x) / (slopeBC - slopeAB);
@@ -171,6 +171,7 @@ Point find_circumcentre(Point *p1, Point *p2, Point *p3)
         x_U = midAB.x;
         y_U = slopeBC * (x_U - midBC.x) + midBC.y;
     }
+
     else if (p3->y == p2->y && p2->y != p1->y)
     {
         double slopeAB = (-p2->x + p1->x) / (p2->y - p1->y);
