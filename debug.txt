@@ -2,12 +2,14 @@ Hello World
 Filename: input.csv
 Parsing CSV
 Parse complete
-Points: 10
+Points: 17
 Constructing Voronoi diagram
 Queue pushed
 7 15  HUIHUIHUIHUIHUIHUIHUI
 5 14 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge5, 16.5
+Started edge5, 16.5
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
@@ -18,6 +20,8 @@ Site: 7, 15    1e+37, 1e+37 0
 1e+37
 8 13 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge8, 14.25
+Started edge8, 14.25
 Watch my circle coordinates
 6.5, 11.9189
 Site: -1e+37, 1e+37    7, 15 0
@@ -32,10 +36,57 @@ Site: 7, 15    8, 13 1
 8
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
+11 12 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge11, 16.1667
+Started edge11, 16.1667
+Watch my circle coordinates
+10.5, 11.9645
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-4.47723
+Site: 7, 15    5, 14 0
+6.47723
+Site: 7, 15    8, 13 0
+6.56351
+Site: 7, 15    8, 13 1
+10.4365
+Site: 7, 15    11, 12 0
+11
+Site: 7, 15    11, 12 1
+11
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10.5 11.9645 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge8, 14.25   10.5, 15.5
+Ended edge11, 16.1667   10.5, 15.5
+Circle event is valid
+Started edge10.5, 15.5
+pll2 pl2 q2 pr2
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-4.62936
+Site: 7, 15    5, 14 0
+6.48723
+Site: 7, 15    8, 13 0
+6.53553
+Site: 8, 13    11, 12 0
+10.5
+Site: 7, 15    11, 12 1
+11.5948
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
 6.5 11.9189 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge5, 16.5   6.5, 13.5
+Ended edge8, 14.25   6.5, 13.5
 Circle event is valid
+Started edge6.5, 13.5
 pll2 pl2 q2 pr2
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
@@ -43,586 +94,1336 @@ Site: 7, 15    5, 14 1
 -4.82456
 Site: 5, 14    8, 13 0
 6.5
-Site: 7, 15    8, 13 1
-10.5811
+Site: 8, 13    11, 12 0
+10.3068
+Site: 7, 15    11, 12 1
+11.9415
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+1 10 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge1, 14
+Started edge1, 14
+Watch my circle coordinates
+11.5, -8.84909
+Watch my circle coordinates
+5.25, 5.49265
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-13
+Site: 5, 14    1, 10 1
+1
+Site: 5, 14    1, 10 0
+1
+Site: 5, 14    8, 13 0
+6.04555
+Site: 8, 13    11, 12 0
+9.25403
+Site: 7, 15    11, 12 1
+18.9371
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 6 9 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge6, 11.5
+Started edge6, 11.5
 Watch my circle coordinates
 5.85714, 8.99603
 Watch my circle coordinates
-4.25, 8.57327
+8.71429, 7.19778
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -17.2474
+Site: 5, 14    1, 10 1
+-3.16228
+Site: 5, 14    1, 10 0
+3.16228
 Site: 5, 14    8, 13 0
 5.85786
 Site: 8, 13    6, 9 1
 6
 Site: 8, 13    6, 9 0
 6
-Site: 7, 15    8, 13 1
-15.4772
+Site: 8, 13    11, 12 0
+9.04555
+Site: 7, 15    11, 12 1
+22.0711
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 5.85714 8.99603 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge6.5, 13.5   5.85714, 11.5714
+Ended edge6, 11.5   5.85714, 11.5714
 Circle event is valid
+Started edge5.85714, 11.5714
 pll2 pl2 q2 pr2
 Watch my circle eventt
-7.31818, 8.71117
+3.83333, 8.10254
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -17.2643
+Site: 5, 14    1, 10 1
+-3.17376
+Site: 5, 14    1, 10 0
+3.16583
 Site: 5, 14    6, 9 0
 5.85714
 Site: 8, 13    6, 9 0
 6.13889
-Site: 7, 15    8, 13 1
-15.4837
+Site: 8, 13    11, 12 0
+9.04478
+Site: 7, 15    11, 12 1
+22.0834
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-7.31818 8.71117 HUIHUIHUIHUIHUIHUI
+3.83333 8.10254 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge1, 14   3.83333, 11.1667
+Ended edge5.85714, 11.5714   3.83333, 11.1667
+Circle event is valid
+Started edge3.83333, 11.1667
+pll2 pl2 q2 pr2
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-21.0563
+Site: 5, 14    1, 10 1
+-5.62826
+Site: 1, 10    6, 9 0
+3.83333
+Site: 8, 13    6, 9 0
+7.89522
+Site: 8, 13    11, 12 0
+8.87657
+Site: 7, 15    11, 12 1
+24.838
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+3 8 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge3, 10
+Started edge3, 10
+Watch my circle coordinates
+4, 7.83772
+Watch my circle coordinates
+3.75, 7.89956
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-21.4914
+Site: 5, 14    1, 10 1
+-5.89898
+Site: 1, 10    3, 8 0
+3
+Site: 1, 10    3, 8 1
+3
+Site: 1, 10    6, 9 0
+3.7889
+Site: 8, 13    6, 9 0
+8
+Site: 8, 13    11, 12 0
+8.85786
+Site: 7, 15    11, 12 1
+25.1525
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10 8 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge10, 10.125
+Started edge10, 10.125
+Watch my circle coordinates
+8.80769, 7.72254
+Watch my circle coordinates
+7.02632, 6.73676
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-21.4914
+Site: 5, 14    1, 10 1
+-5.89898
+Site: 1, 10    3, 8 0
+3
+Site: 1, 10    3, 8 1
+3
+Site: 1, 10    6, 9 0
+3.7889
+Site: 8, 13    6, 9 0
+8
+Site: 8, 13    11, 12 0
+8.85786
+Site: 11, 12    10, 8 1
+10
+Site: 11, 12    10, 8 0
+10
+Site: 7, 15    11, 12 1
+25.1525
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+3.75 7.89956 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3, 10   3.75, 10.75
+Ended edge3.83333, 11.1667   3.75, 10.75
+Circle event is valid
+Started edge3.75, 10.75
+pll2 pl2 q2 pr2
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-21.9175
+Site: 5, 14    1, 10 1
+-6.16277
+Site: 1, 10    3, 8 0
+2.45088
+Site: 3, 8    6, 9 0
+3.75
+Site: 8, 13    6, 9 0
+8.09853
+Site: 8, 13    11, 12 0
+8.83963
+Site: 11, 12    10, 8 1
+9.31339
+Site: 11, 12    10, 8 0
+10.6364
+Site: 7, 15    11, 12 1
+25.4603
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+4 7.83772 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-5, 14   6, 9   0
-4.79735
+1, 10   3, 8   0
+2.32456
+3, 8   6, 9   0
+3.88653
 8, 13   6, 9   0
-7.09994
-7, 15   8, 13   1
-15.9508
-Event mera x: 7.31818
+8.15747
+Event mera x: 4
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--18.4735
-Site: 5, 14    6, 9 0
-4.79735
+-22.1798
+Site: 5, 14    1, 10 1
+-6.32456
+Site: 1, 10    3, 8 0
+2.32456
+Site: 3, 8    6, 9 0
+3.88653
 Site: 8, 13    6, 9 0
-7.09994
-Site: 7, 15    8, 13 1
-15.9508
+8.15747
+Site: 8, 13    11, 12 0
+8.82845
+Site: 11, 12    10, 8 1
+9.11228
+Site: 11, 12    10, 8 0
+10.8066
+Site: 7, 15    11, 12 1
+25.6497
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-4.25 8.57327 HUIHUIHUIHUIHUIHUI
+8.80769 7.72254 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge10.5, 15.5   8.80769, 10.4231
+Ended edge10, 10.125   8.80769, 10.4231
+Circle event is valid
+Started edge8.80769, 10.4231
+pll2 pl2 q2 pr2
+Watch my circle eventt
+8.44444, 7.51951
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-22.6685
+Site: 5, 14    1, 10 1
+-6.62473
+Site: 1, 10    3, 8 0
+2.15327
+Site: 3, 8    6, 9 0
+4.05029
+Site: 8, 13    6, 9 0
+8.26423
+Site: 8, 13    10, 8 0
+8.80769
+Site: 11, 12    10, 8 0
+11.0536
+Site: 7, 15    11, 12 1
+26.0022
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+8.44444 7.51951 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge6, 11.5   8.44444, 10.2778
+Ended edge8.80769, 10.4231   8.44444, 10.2778
+Circle event is valid
+Started edge8.44444, 10.2778
+pll2 pl2 q2 pr2
+Watch my circle eventt
+6.5, -4.0192
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-23.5297
+Site: 5, 14    1, 10 1
+-7.15054
+Site: 1, 10    3, 8 0
+1.93657
+Site: 3, 8    6, 9 0
+4.22566
+Site: 6, 9    10, 8 0
+8.44444
+Site: 11, 12    10, 8 0
+11.3923
+Site: 7, 15    11, 12 1
+26.6228
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+8.71429 7.19778 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
--1e+37, 1e+37   7, 15   0
--1e+37
-7, 15   5, 14   1
--19.0588
-5, 14   6, 9   0
-4.53346
-Event mera x: 4.25
+3, 8   6, 9   0
+4.39568
+6, 9   10, 8   0
+8.25124
+11, 12   10, 8   0
+11.8226
+Event mera x: 8.71429
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--19.0588
-Site: 5, 14    6, 9 0
-4.53346
-Site: 8, 13    6, 9 0
-7.32327
-Site: 7, 15    8, 13 1
-16.1767
+-24.8944
+Site: 5, 14    1, 10 1
+-7.97657
+Site: 1, 10    3, 8 0
+1.68185
+Site: 3, 8    6, 9 0
+4.39568
+Site: 6, 9    10, 8 0
+8.25124
+Site: 11, 12    10, 8 0
+11.8226
+Site: 7, 15    11, 12 1
+27.6048
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+7.02632 6.73676 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+1, 10   3, 8   0
+1.39191
+3, 8   6, 9   0
+4.55726
+6, 9   10, 8   0
+8.08136
+Event mera x: 7.02632
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-26.8496
+Site: 5, 14    1, 10 1
+-9.14826
+Site: 1, 10    3, 8 0
+1.39191
+Site: 3, 8    6, 9 0
+4.55726
+Site: 6, 9    10, 8 0
+8.08136
+Site: 11, 12    10, 8 0
+12.3421
+Site: 7, 15    11, 12 1
+29.009
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 9 6 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge9, 7.25
+Started edge9, 7.25
 Watch my circle coordinates
-13, 4.93774
+7.83333, 5.66027
 Watch my circle coordinates
-9.66667, 5.93989
+-3.5, -1.07738
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -29.9737
-Site: 5, 14    6, 9 0
-1.604
-Site: 6, 9    9, 6 0
+Site: 5, 14    1, 10 1
+-11
+Site: 1, 10    3, 8 0
+1
+Site: 3, 8    6, 9 0
+4.74597
+Site: 6, 9    10, 8 0
+7.9005
+Site: 10, 8    9, 6 1
 9
-Site: 6, 9    9, 6 1
+Site: 10, 8    9, 6 0
 9
-Site: 8, 13    6, 9 0
-9.62348
-Site: 7, 15    8, 13 1
-20.3741
+Site: 11, 12    10, 8 0
+13.0707
+Site: 7, 15    11, 12 1
+31.2474
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-9.66667 5.93989 HUIHUIHUIHUIHUIHUI
+7.83333 5.66027 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge8.44444, 10.2778   7.83333, 7.83333
+Ended edge9, 7.25   7.83333, 7.83333
 Circle event is valid
+Started edge7.83333, 7.83333
 pll2 pl2 q2 pr2
 Watch my circle eventt
--5.5, -7.07738
+5.5, 1.96447
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--30.2285
-Site: 5, 14    6, 9 0
-1.5473
+-31.4141
+Site: 5, 14    1, 10 1
+-11.8476
+Site: 1, 10    3, 8 0
+0.833333
+Site: 3, 8    6, 9 0
+4.82053
 Site: 6, 9    9, 6 0
-8.45356
-Site: 9, 6    8, 13 1
-9.66667
-Site: 7, 15    8, 13 1
-20.4719
+7.83333
+Site: 10, 8    9, 6 0
+9.82693
+Site: 11, 12    10, 8 0
+13.385
+Site: 7, 15    11, 12 1
+32.2778
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-3 5 HUIHUIHUIHUIHUIHUI
-Site event
-Watch my circle coordinates
--0.0263158, 4.20913
-Watch my circle coordinates
-5.92857, 2.85631
-Site: -1e+37, 1e+37    7, 15 0
--1e+37
-Site: 7, 15    5, 14 1
--34.2132
-Site: 5, 14    6, 9 0
-0.681177
-Site: 6, 9    3, 5 1
-3
-Site: 6, 9    3, 5 0
-3
-Site: 6, 9    9, 6 0
-7.17157
-Site: 9, 6    8, 13 1
-12
-Site: 7, 15    8, 13 1
-22
-Site: 7, 15    1e+37, 1e+37 0
-1e+37
-8 5 HUIHUIHUIHUIHUIHUI
-Site event
-Watch my circle coordinates
-7, 4.76393
-Watch my circle coordinates
-5, 4
-Site: -1e+37, 1e+37    7, 15 0
--1e+37
-Site: 7, 15    5, 14 1
--34.2132
-Site: 5, 14    6, 9 0
-0.681177
-Site: 6, 9    3, 5 1
-3
-Site: 6, 9    3, 5 0
-3
-Site: 6, 9    9, 6 0
-7.17157
-Site: 9, 6    8, 5 1
-8
-Site: 9, 6    8, 5 0
-8
-Site: 9, 6    8, 13 1
-12
-Site: 7, 15    8, 13 1
-22
-Site: 7, 15    1e+37, 1e+37 0
-1e+37
-13 4.93774 HUIHUIHUIHUIHUIHUI
+5.25 5.49265 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-9, 6   8, 5   0
-8.30143
-9, 6   8, 13   1
-12.1079
-7, 15   8, 13   1
-22.1012
-Event mera x: 13
+1, 10   3, 8   0
+0.75309
+3, 8   6, 9   0
+4.85566
+6, 9   9, 6   0
+7.62085
+Event mera x: 5.25
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--34.4771
-Site: 5, 14    6, 9 0
-0.624903
-Site: 6, 9    3, 5 1
-2.32468
-Site: 6, 9    3, 5 0
-3.58193
+-32.1247
+Site: 5, 14    1, 10 1
+-12.2647
+Site: 1, 10    3, 8 0
+0.75309
+Site: 3, 8    6, 9 0
+4.85566
 Site: 6, 9    9, 6 0
-7.12452
+7.62085
+Site: 10, 8    9, 6 0
+10.0073
+Site: 11, 12    10, 8 0
+13.5368
+Site: 7, 15    11, 12 1
+32.7858
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+12 5 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge12, 7.16667
+Started edge12, 7.16667
+Watch my circle coordinates
+10.7857, 4.53606
+Watch my circle coordinates
+14.6818, 4.17641
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-34.2132
+Site: 5, 14    1, 10 1
+-13.4868
+Site: 1, 10    3, 8 0
+0.522774
+Site: 3, 8    6, 9 0
+4.95445
+Site: 6, 9    9, 6 0
+7.17157
+Site: 10, 8    9, 6 0
+10.4365
+Site: 10, 8    12, 5 0
+12
+Site: 10, 8    12, 5 1
+12
+Site: 11, 12    10, 8 0
+13.9736
+Site: 7, 15    11, 12 1
+34.2777
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+3 5 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge3, 6.5
+Started edge3, 6.5
+Watch my circle coordinates
+-0.5, 2.69211
+Watch my circle coordinates
+5.16667, 3.86477
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-34.2132
+Site: 5, 14    1, 10 1
+-13.4868
+Site: 1, 10    3, 8 0
+0.522774
+Site: 3, 8    3, 5 0
+3
+Site: 3, 8    3, 5 1
+3
+Site: 3, 8    6, 9 0
+4.95445
+Site: 6, 9    9, 6 0
+7.17157
+Site: 10, 8    9, 6 0
+10.4365
+Site: 10, 8    12, 5 0
+12
+Site: 10, 8    12, 5 1
+12
+Site: 11, 12    10, 8 0
+13.9736
+Site: 7, 15    11, 12 1
+34.2777
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+8 5 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge8, 6
+Started edge8, 6
+Watch my circle coordinates
+7, 4.76393
+Watch my circle coordinates
+4.5, 3.79912
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-34.2132
+Site: 5, 14    1, 10 1
+-13.4868
+Site: 1, 10    3, 8 0
+0.522774
+Site: 3, 8    3, 5 0
+3
+Site: 3, 8    3, 5 1
+3
+Site: 3, 8    6, 9 0
+4.95445
+Site: 6, 9    9, 6 0
+7.17157
 Site: 9, 6    8, 5 1
-7.57406
+8
 Site: 9, 6    8, 5 0
-8.30143
-Site: 9, 6    8, 13 1
-12.1079
-Site: 7, 15    8, 13 1
-22.1012
+8
+Site: 10, 8    9, 6 0
+10.4365
+Site: 10, 8    12, 5 0
+12
+Site: 10, 8    12, 5 1
+12
+Site: 11, 12    10, 8 0
+13.9736
+Site: 7, 15    11, 12 1
+34.2777
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 7 4.76393 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge7.83333, 7.83333   7, 7
+Ended edge8, 6   7, 7
 Circle event is valid
+Started edge7, 7
 pll2 pl2 q2 pr2
 Watch my circle eventt
-5.5, 3.45492
+5.28571, 3.19778
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -35.2139
-Site: 5, 14    6, 9 0
-0.468374
-Site: 6, 9    3, 5 1
-1.57295
-Site: 6, 9    3, 5 0
-4.07295
+Site: 5, 14    1, 10 1
+-14.0708
+Site: 1, 10    3, 8 0
+0.414681
+Site: 3, 8    3, 5 0
+2.12597
+Site: 3, 8    3, 5 1
+3.87403
+Site: 3, 8    6, 9 0
+5
 Site: 6, 9    8, 5 0
 7
 Site: 9, 6    8, 5 0
 8.52786
-Site: 9, 6    8, 13 1
-12.3996
-Site: 7, 15    8, 13 1
-22.3836
+Site: 10, 8    9, 6 0
+10.618
+Site: 10, 8    12, 5 0
+11.1069
+Site: 10, 8    12, 5 1
+13.2078
+Site: 11, 12    10, 8 0
+14.179
+Site: 7, 15    11, 12 1
+34.992
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
--0.0263158 4.20913 HUIHUIHUIHUIHUIHUI
+10.7857 4.53606 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge9, 7.25   10.7857, 6.35714
+Ended edge12, 7.16667   10.7857, 6.35714
 Circle event is valid
+Started edge10.7857, 6.35714
 pll2 pl2 q2 pr2
 Watch my circle eventt
-9.0625, 1.43637
+10, 1.76393
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--37.5657
-Site: 5, 14    3, 5 1
--0.0263158
-Site: 6, 9    3, 5 0
-4.84001
+-36.1798
+Site: 5, 14    1, 10 1
+-14.6335
+Site: 1, 10    3, 8 0
+0.311421
+Site: 3, 8    3, 5 0
+1.73231
+Site: 3, 8    3, 5 1
+4.26769
+Site: 3, 8    6, 9 0
+5.04314
 Site: 6, 9    8, 5 0
-6.21915
+6.62302
 Site: 9, 6    8, 5 0
-8.89219
-Site: 9, 6    8, 13 1
-13.2639
-Site: 7, 15    8, 13 1
-23.2847
+8.70154
+Site: 9, 6    12, 5 0
+10.7857
+Site: 10, 8    12, 5 1
+13.8329
+Site: 11, 12    10, 8 0
+14.3752
+Site: 7, 15    11, 12 1
+35.6811
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+14.6818 4.17641 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge12, 7.16667   14.6818, 8.95455
+Ended edge10, 10.125   14.6818, 8.95455
+Circle event is valid
+Started edge14.6818, 8.95455
+pll2 pl2 q2 pr2
+Watch my circle eventt
+4.5, -0.405694
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-37.7043
+Site: 5, 14    1, 10 1
+-15.5202
+Site: 1, 10    3, 8 0
+0.150207
+Site: 3, 8    3, 5 0
+1.22544
+Site: 3, 8    3, 5 1
+4.77456
+Site: 3, 8    6, 9 0
+5.10989
+Site: 6, 9    8, 5 0
+6.18338
+Site: 9, 6    8, 5 0
+8.90955
+Site: 9, 6    12, 5 0
+10.5953
+Site: 12, 5    11, 12 1
+14.6818
+Site: 7, 15    11, 12 1
+36.7683
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 3 4 HUIHUIHUIHUIHUIHUI
 Site event
-Watch my circle coordinates
-26.5, -19.0053
-Watch my circle coordinates
-7.83333, -0.359127
+Started edge3, 4.5
+Started edge3, 4.5
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -38.4521
-Site: 5, 14    3, 5 1
--0.46164
+Site: 5, 14    1, 10 1
+-15.9545
+Site: 1, 10    3, 8 0
+0.0717968
+Site: 3, 8    3, 5 0
+1
 Site: 3, 5    3, 4 0
 3
 Site: 3, 5    3, 4 1
 3
-Site: 6, 9    3, 5 0
-5.04508
+Site: 3, 8    3, 5 1
+5
+Site: 3, 8    6, 9 0
+5.14214
 Site: 6, 9    8, 5 0
 6
 Site: 9, 6    8, 5 0
 9
-Site: 9, 6    8, 13 1
-13.5714
-Site: 7, 15    8, 13 1
-23.6243
+Site: 9, 6    12, 5 0
+10.5279
+Site: 12, 5    11, 12 1
+15
+Site: 7, 15    11, 12 1
+37.3014
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-5 4 HUIHUIHUIHUIHUIHUI
+4 4 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge4, 5
+Started edge4, 5
+Watch my circle coordinates
+3.5, 3.79289
+Watch my circle coordinates
+5.5, 3.58452
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-38.4521
+Site: 5, 14    1, 10 1
+-15.9545
+Site: 1, 10    3, 8 0
+0.0717968
+Site: 3, 8    3, 5 0
+1
+Site: 3, 5    3, 4 0
+3
+Site: 3, 5    3, 4 1
+3
+Site: 3, 5    4, 4 0
+4
+Site: 3, 5    4, 4 1
+4
+Site: 3, 8    3, 5 1
+5
+Site: 3, 8    6, 9 0
+5.14214
+Site: 6, 9    8, 5 0
+6
+Site: 9, 6    8, 5 0
+9
+Site: 9, 6    12, 5 0
+10.5279
+Site: 12, 5    11, 12 1
+15
+Site: 7, 15    11, 12 1
+37.3014
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+5.16667 3.86477 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3, 6.5   5.16667, 6.5
+Ended edge3.75, 10.75   5.16667, 6.5
+Circle event is valid
+Started edge5.16667, 6.5
+pll2 pl2 q2 pr2
+Watch my circle eventt
+5.5, 3.45492
+Watch my circle eventt
+5.35714, 3.63722
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-39.0253
+Site: 5, 14    1, 10 1
+-16.2871
+Site: 1, 10    3, 8 0
+0.0119454
+Site: 3, 8    3, 5 0
+0.833333
+Site: 3, 5    3, 4 0
+2.60819
+Site: 3, 5    3, 4 1
+3.39181
+Site: 3, 5    4, 4 0
+3.58112
+Site: 3, 5    4, 4 1
+4.68934
+Site: 3, 5    6, 9 0
+5.16667
+Site: 6, 9    8, 5 0
+5.86815
+Site: 9, 6    8, 5 0
+9.06658
+Site: 9, 6    12, 5 0
+10.4823
+Site: 12, 5    11, 12 1
+15.232
+Site: 7, 15    11, 12 1
+37.7099
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+4.5 3.79912 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-3, 5   3, 4   0
-3
 3, 5   3, 4   1
-3
-6, 9   3, 5   0
-5.04508
-Event mera x: 5
+3.49115
+3, 5   4, 4   0
+3.50629
+3, 5   4, 4   1
+4.89547
+Event mera x: 4.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--38.4521
-Site: 5, 14    3, 5 1
--0.46164
+-39.3035
+Site: 5, 14    1, 10 1
+-16.4485
+Site: 1, 10    3, 8 0
+-0.0170343
+Site: 3, 8    3, 5 0
+0.753951
 Site: 3, 5    3, 4 0
-3
+2.50885
 Site: 3, 5    3, 4 1
-3
-Site: 6, 9    3, 5 0
-5.04508
+3.49115
+Site: 3, 5    4, 4 0
+3.50629
+Site: 3, 5    4, 4 1
+4.89547
+Site: 3, 5    6, 9 0
+5.22325
 Site: 6, 9    8, 5 0
-6
+5.80633
 Site: 9, 6    8, 5 0
-9
-Site: 9, 6    8, 13 1
-13.5714
-Site: 7, 15    8, 13 1
-23.6243
+9.09825
+Site: 9, 6    12, 5 0
+10.4616
+Site: 12, 5    11, 12 1
+15.3416
+Site: 7, 15    11, 12 1
+37.9082
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+3.5 3.79289 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3, 4.5   3.5, 4.5
+Ended edge4, 5   3.5, 4.5
+Circle event is valid
+Started edge3.5, 4.5
+pll2 pl2 q2 pr2
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-39.3299
+Site: 5, 14    1, 10 1
+-16.4638
+Site: 1, 10    3, 8 0
+-0.019782
+Site: 3, 8    3, 5 0
+0.746463
+Site: 3, 5    3, 4 0
+2.5
+Site: 3, 4    4, 4 0
+3.5
+Site: 3, 5    4, 4 1
+4.91421
+Site: 3, 5    6, 9 0
+5.22854
+Site: 6, 9    8, 5 0
+5.80053
+Site: 9, 6    8, 5 0
+9.10123
+Site: 9, 6    12, 5 0
+10.4597
+Site: 12, 5    11, 12 1
+15.3519
+Site: 7, 15    11, 12 1
+37.927
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+5.35714 3.63722 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge4, 5   5.35714, 6.35714
+Ended edge5.16667, 6.5   5.35714, 6.35714
+Circle event is valid
+Started edge5.35714, 6.35714
+pll2 pl2 q2 pr2
+Watch my circle eventt
+5.55556, 3.51951
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-39.9897
+Site: 5, 14    1, 10 1
+-16.8463
+Site: 1, 10    3, 8 0
+-0.0883134
+Site: 3, 8    3, 5 0
+0.561663
+Site: 3, 5    3, 4 0
+2.29688
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    6, 9 0
+5.35714
+Site: 6, 9    8, 5 0
+5.65892
+Site: 9, 6    8, 5 0
+9.17491
+Site: 9, 6    12, 5 0
+10.4139
+Site: 12, 5    11, 12 1
+15.6048
+Site: 7, 15    11, 12 1
+38.3971
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+5.5 3.58452 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+3, 4   4, 4   0
+3.5
+4, 4   6, 9   0
+5.44936
+6, 9   8, 5   0
+5.61228
+Event mera x: 5.5
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-40.2131
+Site: 5, 14    1, 10 1
+-16.9758
+Site: 1, 10    3, 8 0
+-0.11146
+Site: 3, 8    3, 5 0
+0.5
+Site: 3, 5    3, 4 0
+2.23313
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    6, 9 0
+5.44936
+Site: 6, 9    8, 5 0
+5.61228
+Site: 9, 6    8, 5 0
+9.1995
+Site: 9, 6    12, 5 0
+10.3992
+Site: 12, 5    11, 12 1
+15.6886
+Site: 7, 15    11, 12 1
+38.5562
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+5.55556 3.51951 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge5.35714, 6.35714   5.55556, 6.27778
+Ended edge7, 7   5.55556, 6.27778
+Circle event is valid
+Started edge5.55556, 6.27778
+pll2 pl2 q2 pr2
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-40.4886
+Site: 5, 14    1, 10 1
+-17.1354
+Site: 1, 10    3, 8 0
+-0.139977
+Site: 3, 8    3, 5 0
+0.42448
+Site: 3, 5    3, 4 0
+2.15658
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    8, 5 0
+5.55556
+Site: 9, 6    8, 5 0
+9.22962
+Site: 9, 6    12, 5 0
+10.3815
+Site: 12, 5    11, 12 1
+15.7908
+Site: 7, 15    11, 12 1
+38.7525
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 5.5 3.45492 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
-Circle event is valid
-pll2 pl2 q2 pr2
-Watch my circle eventt
-5.5, 1.95049
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+3, 5   3, 4   0
+2.08228
+3, 4   4, 4   0
+3.5
+4, 4   8, 5   0
+5.6035
+Event mera x: 5.5
+Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -40.7624
-Site: 5, 14    3, 5 1
--1.47828
+Site: 5, 14    1, 10 1
+-17.294
+Site: 1, 10    3, 8 0
+-0.168276
+Site: 3, 8    3, 5 0
+0.349992
 Site: 3, 5    3, 4 0
 2.08228
-Site: 3, 5    3, 4 1
-3.91772
-Site: 3, 5    8, 5 0
-5.5
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    8, 5 0
+5.6035
 Site: 9, 6    8, 5 0
 9.25933
-Site: 9, 6    8, 13 1
-14.3424
-Site: 7, 15    8, 13 1
-24.5092
+Site: 9, 6    12, 5 0
+10.3644
+Site: 12, 5    11, 12 1
+15.8912
+Site: 7, 15    11, 12 1
+38.9475
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+5.28571 3.19778 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+3, 5   3, 4   0
+1.7976
+3, 4   4, 4   0
+3.5
+4, 4   8, 5   0
+5.74876
+Event mera x: 5.28571
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-41.8522
+Site: 5, 14    1, 10 1
+-17.9248
+Site: 1, 10    3, 8 0
+-0.28057
+Site: 3, 8    3, 5 0
+0.0581221
+Site: 3, 5    3, 4 0
+1.7976
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    8, 5 0
+5.74876
+Site: 9, 6    8, 5 0
+9.3759
+Site: 9, 6    12, 5 0
+10.3002
+Site: 12, 5    11, 12 1
+16.2808
+Site: 7, 15    11, 12 1
+39.7237
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 5 3 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge5, 4
+Started edge5, 4
 Watch my circle coordinates
-4.5, 2.91886
+3.5, 0.918861
 Watch my circle coordinates
-5.5, 2.95049
+5.9, 2.79762
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -42.6905
-Site: 5, 14    3, 5 1
--2.24928
+Site: 5, 14    1, 10 1
+-18.4097
+Site: 1, 10    3, 8 0
+-0.3666
+Site: 3, 8    3, 5 0
+-0.162278
 Site: 3, 5    3, 4 0
 1.58579
-Site: 3, 5    3, 4 1
-4.41421
-Site: 3, 5    5, 3 0
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
 5
-Site: 3, 5    5, 3 1
+Site: 4, 4    5, 3 1
 5
-Site: 3, 5    8, 5 0
-5.5
+Site: 4, 4    8, 5 0
+5.83095
 Site: 9, 6    8, 5 0
 9.4641
-Site: 9, 6    8, 13 1
-14.9614
-Site: 7, 15    8, 13 1
-25.2474
+Site: 9, 6    12, 5 0
+10.254
+Site: 12, 5    11, 12 1
+16.5714
+Site: 7, 15    11, 12 1
+40.3205
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-5.5 2.95049 HUIHUIHUIHUIHUIHUI
+5.9 2.79762 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge5, 4   5.9, 4.9
+Ended edge5.55556, 6.27778   5.9, 4.9
 Circle event is valid
+Started edge5.9, 4.9
 pll2 pl2 q2 pr2
 Watch my circle eventt
 -0.5, 1.75245
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--42.9003
-Site: 5, 14    3, 5 1
--2.33032
+-43.5482
+Site: 5, 14    1, 10 1
+-18.9054
+Site: 1, 10    3, 8 0
+-0.454353
+Site: 3, 8    3, 5 0
+-0.38491
 Site: 3, 5    3, 4 0
-1.53338
-Site: 3, 5    3, 4 1
-4.46662
-Site: 3, 5    5, 3 0
-4.59902
+1.3727
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+4.50476
 Site: 5, 3    8, 5 0
-5.5
+5.9
 Site: 9, 6    8, 5 0
-9.48602
-Site: 9, 6    8, 13 1
-15.0277
-Site: 7, 15    8, 13 1
-25.3278
+9.55338
+Site: 9, 6    12, 5 0
+10.209
+Site: 12, 5    11, 12 1
+16.8622
+Site: 7, 15    11, 12 1
+40.9311
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-4.5 2.91886 HUIHUIHUIHUIHUIHUI
+-0.5 2.69211 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3, 10   -0.5, 6.5
+Ended edge3, 6.5   -0.5, 6.5
 Circle event is valid
+Started edge-0.5, 6.5
 pll2 pl2 q2 pr2
+Watch my circle eventt
+-5.5, -4.01469
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--43.0343
-Site: 5, 14    3, 5 1
--2.38185
+-43.9953
+Site: 5, 14    1, 10 1
+-19.1638
+Site: 1, 10    3, 5 0
+-0.5
 Site: 3, 5    3, 4 0
-1.5
-Site: 3, 4    5, 3 0
-4.5
+1.26263
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+4.41047
 Site: 5, 3    8, 5 0
-5.6191
+6.05782
 Site: 9, 6    8, 5 0
-9.5
-Site: 9, 6    8, 13 1
-15.07
-Site: 7, 15    8, 13 1
-25.3791
-Site: 7, 15    1e+37, 1e+37 0
-1e+37
-5.92857 2.85631 HUIHUIHUIHUIHUIHUI
-Circle event
-Handling circle event yayyyyyy Lets find out the bugs now shall we?
-FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-3, 4   5, 3   0
-4.38092
-5, 3   8, 5   0
-5.785
-9, 6   8, 5   0
-9.52757
-Event mera x: 5.92857
-Ummm how is this happening? False alarm
-Site: -1e+37, 1e+37    7, 15 0
--1e+37
-Site: 7, 15    5, 14 1
--43.2994
-Site: 5, 14    3, 5 1
--2.4832
-Site: 3, 5    3, 4 0
-1.43421
-Site: 3, 4    5, 3 0
-4.38092
-Site: 5, 3    8, 5 0
-5.785
-Site: 9, 6    8, 5 0
-9.52757
-Site: 9, 6    8, 13 1
-15.1534
-Site: 7, 15    8, 13 1
-25.4806
+9.5996
+Site: 9, 6    12, 5 0
+10.1863
+Site: 12, 5    11, 12 1
+17.0116
+Site: 7, 15    11, 12 1
+41.2493
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 1 2 HUIHUIHUIHUIHUIHUI
 Site event
+Started edge1, 4
+Started edge1, 4
 Watch my circle coordinates
 0.5, 1.95049
 Watch my circle coordinates
-3.16667, -0.339734
+3.5, -1.04951
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -46.9285
-Site: 5, 14    3, 5 1
--3.81303
+Site: 5, 14    1, 10 1
+-20.8564
+Site: 1, 10    3, 5 0
+-1.07636
 Site: 3, 5    3, 4 0
 0.55051
 Site: 3, 4    1, 2 1
 1
 Site: 3, 4    1, 2 0
 1
-Site: 3, 4    5, 3 0
-3.83772
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+4
 Site: 5, 3    8, 5 0
 6.6225
 Site: 9, 6    8, 5 0
 9.89898
-Site: 9, 6    8, 13 1
-16.272
-Site: 7, 15    8, 13 1
-26.8697
+Site: 9, 6    12, 5 0
+10.0455
+Site: 12, 5    11, 12 1
+17.9614
+Site: 7, 15    11, 12 1
+43.3363
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-5.5 1.95049 HUIHUIHUIHUIHUIHUI
+5.5 1.96447 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-3, 4   1, 2   0
-1.40098
-3, 4   5, 3   0
-3.81955
+3, 4   4, 4   0
+3.5
+4, 4   5, 3   0
+3.98231
 5, 3   8, 5   0
-6.65089
+6.64295
 Event mera x: 5.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--47.1383
-Site: 5, 14    3, 5 1
--3.88731
+-47.0791
+Site: 5, 14    1, 10 1
+-20.9432
+Site: 1, 10    3, 5 0
+-1.10508
 Site: 3, 5    3, 4 0
-0.5
+0.514254
 Site: 3, 4    1, 2 1
-0.5
+0.584123
 Site: 3, 4    1, 2 0
-1.40098
-Site: 3, 4    5, 3 0
-3.81955
+1.34481
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.98231
 Site: 5, 3    8, 5 0
-6.65089
+6.64295
 Site: 9, 6    8, 5 0
-9.9202
-Site: 9, 6    8, 13 1
-16.3356
-Site: 7, 15    8, 13 1
-26.95
+9.91421
+Site: 9, 6    12, 5 0
+10.0386
+Site: 12, 5    11, 12 1
+18.009
+Site: 7, 15    11, 12 1
+43.4434
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 0.5 1.95049 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3, 4.5   0.5, 4.5
+Ended edge1, 4   0.5, 4.5
 Circle event is valid
+Started edge0.5, 4.5
 pll2 pl2 q2 pr2
 Watch my circle eventt
--12.5, -4.35316
+-1.75, 1.14588
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -47.1383
-Site: 5, 14    3, 5 1
--3.88731
+Site: 5, 14    1, 10 1
+-20.9774
+Site: 1, 10    3, 5 0
+-1.11635
 Site: 3, 5    1, 2 1
 0.5
 Site: 3, 4    1, 2 0
 1.40098
-Site: 3, 4    5, 3 0
-3.81955
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.97539
 Site: 5, 3    8, 5 0
 6.65089
 Site: 9, 6    8, 5 0
 9.9202
-Site: 9, 6    8, 13 1
-16.3356
-Site: 7, 15    8, 13 1
-26.95
+Site: 9, 6    12, 5 0
+10.0359
+Site: 12, 5    11, 12 1
+18.0277
+Site: 7, 15    11, 12 1
+43.4855
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10 1.76393 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge8, 6   10, 4
+Ended edge10.7857, 6.35714   10, 4
+Circle event is valid
+Started edge10, 4
+pll2 pl2 q2 pr2
+Watch my circle eventt
+10, -7.8122
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-47.9289
+Site: 5, 14    1, 10 1
+-21.433
+Site: 1, 10    3, 5 0
+-1.26587
+Site: 3, 5    1, 2 1
+-0.207834
+Site: 3, 4    1, 2 0
+1.79142
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.88493
+Site: 5, 3    8, 5 0
+6.75145
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    11, 12 1
+18.2761
+Site: 7, 15    11, 12 1
+44.0478
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 -0.5 1.75245 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-7, 15   5, 14   1
--47.9775
-5, 14   3, 5   1
--4.18223
+5, 14   1, 10   1
+-21.4611
+1, 10   3, 5   0
+-1.27501
 3, 5   1, 2   1
 -0.242635
 Event mera x: -0.5
@@ -631,334 +1432,706 @@ Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -47.9775
-Site: 5, 14    3, 5 1
--4.18223
+Site: 5, 14    1, 10 1
+-21.4611
+Site: 1, 10    3, 5 0
+-1.27501
 Site: 3, 5    1, 2 1
 -0.242635
 Site: 3, 4    1, 2 0
 1.80732
-Site: 3, 4    5, 3 0
-3.75082
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.87946
 Site: 5, 3    8, 5 0
 6.75735
-Site: 9, 6    8, 5 0
-10.0049
-Site: 9, 6    8, 13 1
-16.5889
-Site: 7, 15    8, 13 1
-27.2712
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    11, 12 1
+18.2913
+Site: 7, 15    11, 12 1
+44.0824
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-9.0625 1.43637 HUIHUIHUIHUIHUIHUI
+-1.75 1.14588 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
-FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-3, 4   5, 3   0
-3.65034
-5, 3   8, 5   0
-6.9101
-9, 6   8, 5   0
-10.1395
-Event mera x: 9.0625
-Ummm how is this happening? False alarm
+Ended edge-0.5, 6.5   -1.75, 6
+Ended edge0.5, 4.5   -1.75, 6
+Circle event is valid
+Started edge-1.75, 6
+pll2 pl2 q2 pr2
+Watch my circle eventt
+9, -2.94427
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--49.317
-Site: 5, 14    3, 5 1
--4.64633
-Site: 3, 5    1, 2 1
--1.07905
+-50.548
+Site: 5, 14    1, 10 1
+-22.9413
+Site: 1, 10    1, 2 0
+-1.75
 Site: 3, 4    1, 2 0
-2.13633
-Site: 3, 4    5, 3 0
-3.65034
+2.35394
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.60085
 Site: 5, 3    8, 5 0
-6.9101
-Site: 9, 6    8, 5 0
-10.1395
-Site: 9, 6    8, 13 1
-16.9901
-Site: 7, 15    8, 13 1
-27.7838
+7.038
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    11, 12 1
+19.0841
+Site: 7, 15    11, 12 1
+45.91
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10 1 HUIHUIHUIHUIHUIHUI
+Site event
+Started edge10, 3.5
+Started edge10, 3.5
+Watch my circle coordinates
+10, 1
+Watch my circle coordinates
+2.55556, -2.48014
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-51.1662
+Site: 5, 14    1, 10 1
+-23.2971
+Site: 1, 10    1, 2 0
+-2
+Site: 3, 4    1, 2 0
+2.44949
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.5359
+Site: 5, 3    8, 5 0
+7.09902
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+10
+Site: 12, 5    10, 1 0
+10
+Site: 12, 5    11, 12 1
+19.272
+Site: 7, 15    11, 12 1
+46.3495
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10 1 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-51.1662
+Site: 5, 14    1, 10 1
+-23.2971
+Site: 1, 10    1, 2 0
+-2
+Site: 3, 4    1, 2 0
+2.44949
+Site: 3, 4    4, 4 0
+3.5
+Site: 4, 4    5, 3 0
+3.5359
+Site: 5, 3    8, 5 0
+7.09902
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+10
+Site: 12, 5    10, 1 0
+10
+Site: 12, 5    11, 12 1
+19.272
+Site: 7, 15    11, 12 1
+46.3495
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+3.5 0.918861 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge3.5, 4.5   3.5, 2.5
+Ended edge5, 4   3.5, 2.5
+Circle event is valid
+Started edge3.5, 2.5
+pll2 pl2 q2 pr2
+Watch my circle eventt
+3.16667, -0.339734
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-51.51
+Site: 5, 14    1, 10 1
+-23.4949
+Site: 1, 10    1, 2 0
+-2.13336
+Site: 3, 4    1, 2 0
+2.5
+Site: 3, 4    5, 3 0
+3.5
+Site: 5, 3    8, 5 0
+7.1322
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+9.31606
+Site: 12, 5    10, 1 0
+10.6028
+Site: 12, 5    11, 12 1
+19.3761
+Site: 7, 15    11, 12 1
+46.5939
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 3.16667 -0.339734 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
+Ended edge1, 4   3.16667, 1.83333
+Ended edge3.5, 2.5   3.16667, 1.83333
 Circle event is valid
+Started edge3.16667, 1.83333
 pll2 pl2 q2 pr2
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
 -56.8433
-Site: 5, 14    3, 5 1
--7.15051
-Site: 3, 5    1, 2 1
--4.80791
+Site: 5, 14    1, 10 1
+-26.56
+Site: 1, 10    1, 2 0
+-3.91856
 Site: 1, 2    5, 3 0
 3.16667
 Site: 5, 3    8, 5 0
 7.60343
-Site: 9, 6    8, 5 0
-10.8886
-Site: 9, 6    8, 13 1
-19.1953
-Site: 7, 15    8, 13 1
-30.6631
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+6.33977
+Site: 12, 5    10, 1 0
+12.3205
+Site: 12, 5    11, 12 1
+20.9626
+Site: 7, 15    11, 12 1
+50.3833
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-7.83333 -0.359127 HUIHUIHUIHUIHUIHUI
+4.5 -0.405694 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+1, 10   1, 2   0
+-4.00329
 1, 2   5, 3   0
-3.17031
+3.179
 5, 3   8, 5   0
-7.61026
-9, 6   8, 5   0
-10.8967
-Event mera x: 7.83333
+7.62664
+Event mera x: 4.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--56.9255
-Site: 5, 14    3, 5 1
--7.17716
-Site: 3, 5    1, 2 1
--4.84615
+-57.1228
+Site: 5, 14    1, 10 1
+-26.7205
+Site: 1, 10    1, 2 0
+-4.00329
 Site: 1, 2    5, 3 0
-3.17031
+3.179
 Site: 5, 3    8, 5 0
-7.61026
-Site: 9, 6    8, 5 0
-10.8967
-Site: 9, 6    8, 13 1
-19.219
-Site: 7, 15    8, 13 1
-30.6946
+7.62664
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+6.2152
+Site: 12, 5    10, 1 0
+12.3791
+Site: 12, 5    11, 12 1
+21.0445
+Site: 7, 15    11, 12 1
+50.5819
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
--12.5 -4.35316 HUIHUIHUIHUIHUIHUI
-Circle event
-Handling circle event yayyyyyy Lets find out the bugs now shall we?
-Circle event is valid
-pll2 pl2 q2 pr2
-Watch my circle eventt
-10.5, -4.62423
-Site: -1e+37, 1e+37    7, 15 0
--1e+37
-Site: 7, 15    5, 14 1
--73.8485
-Site: 5, 14    1, 2 1
--12.5
-Site: 1, 2    5, 3 0
-3.76836
-Site: 5, 3    8, 5 0
-8.92084
-Site: 9, 6    8, 5 0
-12.5634
-Site: 9, 6    8, 13 1
-24.0188
-Site: 7, 15    8, 13 1
-37.1656
-Site: 7, 15    1e+37, 1e+37 0
-1e+37
-10.5 -4.62423 HUIHUIHUIHUIHUIHUI
+3.5 -1.04951 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+1, 10   1, 2   0
+-4.80479
 1, 2   5, 3   0
-3.8046
+3.29104
 5, 3   8, 5   0
-9.00633
-9, 6   8, 5   0
-12.6761
-Event mera x: 10.5
+7.84857
+Event mera x: 3.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--74.9969
-Site: 5, 14    1, 2 1
--12.9162
+-59.8508
+Site: 5, 14    1, 10 1
+-28.2863
+Site: 1, 10    1, 2 0
+-4.80479
 Site: 1, 2    5, 3 0
-3.8046
+3.29104
 Site: 5, 3    8, 5 0
-9.00633
-Site: 9, 6    8, 5 0
-12.6761
-Site: 9, 6    8, 13 1
-24.3404
-Site: 7, 15    8, 13 1
-37.6046
+7.84857
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+5.03847
+Site: 12, 5    10, 1 0
+12.912
+Site: 12, 5    11, 12 1
+21.8394
+Site: 7, 15    11, 12 1
+52.5193
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
--5.5 -7.07738 HUIHUIHUIHUIHUIHUI
+-3.5 -1.07738 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
-7, 15   5, 14   1
--85.3903
-5, 14   1, 2   1
--16.6061
+5, 14   1, 10   1
+-28.354
+1, 10   1, 2   0
+-4.8386
 1, 2   5, 3   0
-4.12518
+3.29562
+Event mera x: -3.5
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-59.9689
+Site: 5, 14    1, 10 1
+-28.354
+Site: 1, 10    1, 2 0
+-4.8386
+Site: 1, 2    5, 3 0
+3.29562
+Site: 5, 3    8, 5 0
+7.85802
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+4.98874
+Site: 12, 5    10, 1 0
+12.9339
+Site: 12, 5    11, 12 1
+21.8736
+Site: 7, 15    11, 12 1
+52.6032
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+2.55556 -2.48014 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+5, 14   1, 10   1
+-31.7619
+1, 10   1, 2   0
+-6.47748
+1, 2   5, 3   0
+3.50933
+Event mera x: 2.55556
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-65.9126
+Site: 5, 14    1, 10 1
+-31.7619
+Site: 1, 10    1, 2 0
+-6.47748
+Site: 1, 2    5, 3 0
+3.50933
+Site: 5, 3    8, 5 0
+8.32209
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+2.55556
+Site: 12, 5    10, 1 0
+13.9643
+Site: 12, 5    11, 12 1
+23.5816
+Site: 7, 15    11, 12 1
+56.8228
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+9 -2.94427 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+8, 5   12, 5   0
+10
+12, 5   10, 1   1
+1.76943
+12, 5   10, 1   0
+14.2863
+Event mera x: 9
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-67.8791
+Site: 5, 14    1, 10 1
+-32.8885
+Site: 1, 10    1, 2 0
+-7
+Site: 1, 2    5, 3 0
+3.57535
+Site: 5, 3    8, 5 0
+8.47207
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+1.76943
+Site: 12, 5    10, 1 0
+14.2863
+Site: 12, 5    11, 12 1
+24.1415
+Site: 7, 15    11, 12 1
+58.2186
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+-5.5 -4.01469 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+5, 14   1, 10   1
+-35.4856
+1, 10   1, 2   0
+-8.18118
+1, 2   5, 3   0
+3.72277
 Event mera x: -5.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--85.3903
-Site: 5, 14    1, 2 1
--16.6061
+-72.4144
+Site: 5, 14    1, 10 1
+-35.4856
+Site: 1, 10    1, 2 0
+-8.18118
 Site: 1, 2    5, 3 0
-4.12518
+3.72277
 Site: 5, 3    8, 5 0
-9.77242
-Site: 9, 6    8, 5 0
-13.6957
-Site: 9, 6    8, 13 1
-27.2364
-Site: 7, 15    8, 13 1
-41.5774
+8.81375
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+-0.024487
+Site: 12, 5    10, 1 0
+15.0098
+Site: 12, 5    11, 12 1
+25.4251
+Site: 7, 15    11, 12 1
+61.4368
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
-26.5 -19.0053 HUIHUIHUIHUIHUIHUI
+6.5 -4.0192 HUIHUIHUIHUIHUIHUI
 Circle event
 Handling circle event yayyyyyy Lets find out the bugs now shall we?
 FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+1, 10   1, 2   0
+-8.1861
+1, 2   5, 3   0
+3.72338
 5, 3   8, 5   0
-13.4262
-9, 6   8, 5   0
-18.6432
-9, 6   8, 13   1
-41.149
-Event mera x: 26.5
+8.81518
+Event mera x: 6.5
 Ummm how is this happening? False alarm
 Site: -1e+37, 1e+37    7, 15 0
 -1e+37
 Site: 7, 15    5, 14 1
--135.922
-Site: 5, 14    1, 2 1
--33.7564
+-72.4335
+Site: 5, 14    1, 10 1
+-35.4965
+Site: 1, 10    1, 2 0
+-8.1861
 Site: 1, 2    5, 3 0
-5.62346
+3.72338
 Site: 5, 3    8, 5 0
-13.4262
-Site: 9, 6    8, 5 0
-18.6432
-Site: 9, 6    8, 13 1
-41.149
-Site: 7, 15    8, 13 1
-60.8868
+8.81518
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+-0.0320013
+Site: 12, 5    10, 1 0
+15.0128
+Site: 12, 5    11, 12 1
+25.4305
+Site: 7, 15    11, 12 1
+61.4504
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+10 -7.8122 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+8, 5   12, 5   0
+10
+12, 5   10, 1   1
+-6.2859
+12, 5   10, 1   0
+17.4737
+Event mera x: 10
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-88.5035
+Site: 5, 14    1, 10 1
+-44.6878
+Site: 1, 10    1, 2 0
+-12.2203
+Site: 1, 2    5, 3 0
+4.21948
+Site: 5, 3    8, 5 0
+10
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+-6.2859
+Site: 12, 5    10, 1 0
+17.4737
+Site: 12, 5    11, 12 1
+29.9244
+Site: 7, 15    11, 12 1
+72.8485
+Site: 7, 15    1e+37, 1e+37 0
+1e+37
+11.5 -8.84909 HUIHUIHUIHUIHUIHUI
+Circle event
+Handling circle event yayyyyyy Lets find out the bugs now shall we?
+FALSE ALARM I REPEAT FALSE ALARM AAAAAAA
+8, 5   12, 5   0
+10
+12, 5   10, 1   1
+-7.98215
+12, 5   10, 1   0
+18.1331
+Event mera x: 11.5
+Ummm how is this happening? False alarm
+Site: -1e+37, 1e+37    7, 15 0
+-1e+37
+Site: 7, 15    5, 14 1
+-92.8964
+Site: 5, 14    1, 10 1
+-47.1982
+Site: 1, 10    1, 2 0
+-13.3002
+Site: 1, 2    5, 3 0
+4.3517
+Site: 5, 3    8, 5 0
+10.3201
+Site: 8, 5    12, 5 0
+10
+Site: 12, 5    10, 1 1
+-7.98215
+Site: 12, 5    10, 1 0
+18.1331
+Site: 12, 5    11, 12 1
+31.1433
+Site: 7, 15    11, 12 1
+75.9633
 Site: 7, 15    1e+37, 1e+37 0
 1e+37
 Finalizing diagram
 Finalizing diagram in finaliseDiagram
 0 map entries
-Found bound box intersection: 5.00066, -5.50266
+Found bound box intersection: 3.70031, -0.301229
 3.16667, 1.83333
-5.00066, -5.50266
+3.70031, -0.301229
 1, 2   5, 3
 1 map entries
+Found bound box intersection: -8.00025, 6
+-1.75, 6
+-8.00025, 6
+1, 10   1, 2
+2 map entries
+1, 10   3, 5
+-0.5, 6.5   -1.75, 6
+3 map entries
+1, 10   3, 8
+3, 10   -0.5, 6.5
+4 map entries
+1, 10   3, 8
+3, 10   3.75, 10.75
+5 map entries
+1, 10   6, 9
+3.83333, 11.1667   3.75, 10.75
+6 map entries
 3, 4   1, 2
 1, 4   3.16667, 1.83333
-2 map entries
+7 map entries
 3, 4   1, 2
 1, 4   0.5, 4.5
-3 map entries
+8 map entries
+3, 4   4, 4
+3.5, 4.5   3.5, 2.5
+9 map entries
 3, 4   5, 3
-4.5, 4.5   3.16667, 1.83333
-4 map entries
+3.5, 2.5   3.16667, 1.83333
+10 map entries
 3, 5   1, 2
-0.5, 4.5   -12.5, 13.1667
-5 map entries
+0.5, 4.5   -1.75, 6
+11 map entries
 3, 5   3, 4
 3, 4.5   0.5, 4.5
-6 map entries
-3, 5   3, 4
-3, 4.5   4.5, 4.5
-7 map entries
-3, 5   5, 3
-5, 5   4.5, 4.5
-8 map entries
-3, 5   5, 3
-5, 5   5.5, 5.5
-9 map entries
-3, 5   8, 5
-5.5, 6.25   5.5, 5.5
-10 map entries
-Found bound box intersection: 11.9015, -4.10221
-5.5, 5.5
-11.9015, -4.10221
-5, 3   8, 5
-11 map entries
-Found bound box intersection: -26.6519, 17.884
--12.5, 13.1667
--26.6519, 17.884
-5, 14   1, 2
 12 map entries
-5, 14   3, 5
--0.0263158, 10.3947   -12.5, 13.1667
+3, 5   3, 4
+3, 4.5   3.5, 4.5
 13 map entries
-5, 14   6, 9
-5.85714, 11.5714   -0.0263158, 10.3947
+3, 5   4, 4
+4, 5   3.5, 4.5
 14 map entries
+3, 5   4, 4
+4, 5   5.35714, 6.35714
+15 map entries
+3, 5   6, 9
+5.16667, 6.5   5.35714, 6.35714
+16 map entries
+3, 8   3, 5
+3, 6.5   -0.5, 6.5
+17 map entries
+3, 8   3, 5
+3, 6.5   5.16667, 6.5
+18 map entries
+3, 8   6, 9
+3.75, 10.75   5.16667, 6.5
+19 map entries
+4, 4   5, 3
+5, 4   3.5, 2.5
+20 map entries
+4, 4   5, 3
+5, 4   5.9, 4.9
+21 map entries
+4, 4   6, 9
+5.35714, 6.35714   5.55556, 6.27778
+22 map entries
+4, 4   8, 5
+5.55556, 6.27778   5.9, 4.9
+23 map entries
+Found bound box intersection: 8.7612, 0.608195
+5.9, 4.9
+8.7612, 0.608195
+5, 3   8, 5
+24 map entries
+5, 14   1, 10
+1, 14   3.83333, 11.1667
+25 map entries
+Found bound box intersection: -35.0839, 50.0839
+1, 14
+-35.0839, 50.0839
+5, 14   1, 10
+26 map entries
+5, 14   6, 9
+5.85714, 11.5714   3.83333, 11.1667
+27 map entries
 5, 14   8, 13
 6.5, 13.5   5.85714, 11.5714
-15 map entries
-6, 9   3, 5
-3, 8.125   5.5, 6.25
-16 map entries
-6, 9   3, 5
-3, 8.125   -0.0263158, 10.3947
-17 map entries
+28 map entries
 6, 9   8, 5
-7, 7   5.5, 6.25
-18 map entries
+7, 7   5.55556, 6.27778
+29 map entries
 6, 9   9, 6
-9, 9   7, 7
-19 map entries
-6, 9   9, 6
-9, 9   9.66667, 9.66667
-20 map entries
+7.83333, 7.83333   7, 7
+30 map entries
+6, 9   10, 8
+8.44444, 10.2778   7.83333, 7.83333
+31 map entries
 7, 15   5, 14
 5, 16.5   6.5, 13.5
-21 map entries
-Found bound box intersection: -114.741, 255.981
+32 map entries
+Found bound box intersection: -71.7128, 169.926
 5, 16.5
--114.741, 255.981
+-71.7128, 169.926
 7, 15   5, 14
-22 map entries
+33 map entries
 7, 15   8, 13
 8, 14.25   6.5, 13.5
-23 map entries
-Found bound box intersection: 52.7936, 36.6468
-8, 14.25
-52.7936, 36.6468
+34 map entries
 7, 15   8, 13
-24 map entries
+8, 14.25   10.5, 15.5
+35 map entries
+7, 15   11, 12
+11, 16.1667   10.5, 15.5
+36 map entries
+Found bound box intersection: 60.939, 82.752
+11, 16.1667
+60.939, 82.752
+7, 15   11, 12
+37 map entries
+Found bound box intersection: 10, 0.801467
+10, 4
+10, 0.801467
+8, 5   12, 5
+38 map entries
 8, 13   6, 9
-6, 11.5   9.66667, 9.66667
-25 map entries
+6, 11.5   8.44444, 10.2778
+39 map entries
 8, 13   6, 9
 6, 11.5   5.85714, 11.5714
-26 map entries
-Found bound box intersection: 16.5703, -2.5703
-8, 6
-16.5703, -2.5703
+40 map entries
+8, 13   10, 8
+8.80769, 10.4231   8.44444, 10.2778
+41 map entries
+8, 13   11, 12
+10.5, 15.5   8.80769, 10.4231
+42 map entries
 9, 6   8, 5
-27 map entries
+8, 6   10, 4
+43 map entries
 9, 6   8, 5
 8, 6   7, 7
-28 map entries
-Found bound box intersection: 35.3372, 13.3339
-9.66667, 9.66667
-35.3372, 13.3339
-9, 6   8, 13
-Bounding values: -12.5, 1e+37, -19.0053, 25
-Edges: 29
+44 map entries
+9, 6   12, 5
+10.7857, 6.35714   10, 4
+45 map entries
+10, 8   9, 6
+9, 7.25   10.7857, 6.35714
+46 map entries
+10, 8   9, 6
+9, 7.25   7.83333, 7.83333
+47 map entries
+10, 8   12, 5
+12, 7.16667   10.7857, 6.35714
+48 map entries
+10, 8   12, 5
+12, 7.16667   14.6818, 8.95455
+49 map entries
+11, 12   10, 8
+10, 10.125   14.6818, 8.95455
+50 map entries
+11, 12   10, 8
+10, 10.125   8.80769, 10.4231
+51 map entries
+Found bound box intersection: 14.8992, 1.05039
+10, 3.5
+14.8992, 1.05039
+12, 5   10, 1
+52 map entries
+Found bound box intersection: 0.251691, 8.37415
+10, 3.5
+0.251691, 8.37415
+12, 5   10, 1
+53 map entries
+Found bound box intersection: 25.2271, 10.461
+14.6818, 8.95455
+25.2271, 10.461
+12, 5   11, 12
+Bounding values: -9, 1e+37, -9, 25
+Edges: 54
 Edgelist saved to output.csv
 Done
