@@ -111,10 +111,63 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "Before1" << endl;
     std::multiset<Site, ComparatorSet>::iterator prev = --next;
     next++;
-    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - find_breakpoint(next->first, next->second, next->n)) < 0.0001)
+    cout << "Next breakpoint = " << find_breakpoint(next->first, next->second, next->n) << endl;
+    cout << "Prev breakpoint = " << find_breakpoint(prev->first, prev->second, prev->n) << endl;
+    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) < 0.0001) // insert at a breakpoint itself
     {
         cout << "Insertion at a breakpoint bro" << endl;
-        sweeper.y += 0.0001;
+
+        if (fabs(find_breakpoint(prev->first, &event, 0) - event.x) < 0.0001)
+            T.insert({prev->first, &event, 0});
+        else
+            T.insert({prev->first, &event, 1});
+        if (fabs(find_breakpoint(&event, prev->second, 0) - event.x) < 0.0001)
+            T.insert({&event, prev->second, 0});
+        else
+            T.insert({&event, prev->second, 1});
+
+        Point *q = findLeaf(next, prev);
+        Point *edgeval = new Point();
+        *edgeval = {event.x, parabola_at_x(q), 0};
+        add_edge({prev->first, prev->second, prev->n}, edgeval);
+        add_edge({prev->first, &event, 0}, edgeval);
+        add_edge({prev->first, &event, 1}, edgeval);
+
+        std::multiset<Site, ComparatorSet>::iterator prev2 = --prev;
+        prev++;
+        Point *p = findLeaf(prev2, prev);
+        Point *pl;
+        if (prev2->first == p)
+            pl = prev2->second;
+        else
+            pl = prev2->first;
+        Point *pr;
+
+        if (next->first == q)
+            pr = next->second;
+        else
+            pr = next->first;
+
+        Point circ = find_circumcentre(p, q, &event);
+        if (circ.isCircleEvent == 1 && circlemap[{prev->first, &event, prev->second}] != -1)
+        {
+            Q.push(circ);
+            circlemap[{prev->first, &event, prev->second}] = 1;
+        }
+        Point circ2 = find_circumcentre(pl, p, &event);
+        if (circ2.isCircleEvent == 1 && circlemap[{pl, p, &event}] != -1)
+        {
+            Q.push(circ2);
+            circlemap[{pl, p, &event}] = 1;
+        }
+        Point circ3 = find_circumcentre(&event, q, pr);
+        if (circ3.isCircleEvent == 1 && circlemap[{&event, q, pr}] != -1)
+        {
+            Q.push(circ3);
+            circlemap[{&event, q, pr}] = 1;
+        }
+        T.erase(prev);
+        return;
     }
     // cout << "Prev is: " << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
     // cout << "Before2" << endl;
@@ -263,8 +316,8 @@ void Voronoi::handleCircleEvent(Point &event)
     else
         pr = curr->first;
     // q disappears, pr and pl remain.
-    // cout << "pl q pr found" << endl;
-    // cout << pl->x << ", " << pl->y << "   " << q->x << ", " << q->y << "   " << pr->x << ", " << pr->y << endl;
+    cout << "pl q pr found" << endl;
+    cout << pl->x << ", " << pl->y << "   " << q->x << ", " << q->y << "   " << pr->x << ", " << pr->y << endl;
     if (circlemap[{pl, q, pr}] != 1) // if the circle event is false alarm, then dont do anything
         return;
     if (pl->x == MAX_DOUBLE || pl->x == MIN_DOUBLE || pr->x == MAX_DOUBLE || pr->x == MIN_DOUBLE || q->x == MAX_DOUBLE || q->x == MIN_DOUBLE)
@@ -411,11 +464,13 @@ void Voronoi::add_edge(Site s, Point *event)
 {
     if (edgemap[s].start == nullptr)
     {
+        cout << "Edge Starts:  " << event->x << ", " << event->y << endl;
         edgemap[s].start = event;
     }
     else if (edgemap[s].end == nullptr)
     {
         edgemap[s].end = event;
+        cout << "Edge ends:  " << edgemap[s].start->x << ", " << edgemap[s].start->y << "   " << edgemap[s].end->x << ", " << edgemap[s].end->y << endl;
     }
     else
     {
@@ -428,7 +483,7 @@ void Voronoi::finalizeDiagram()
     cout << "Finalizing diagram in finaliseDiagram" << endl;
     int i = 0;
     // iterate over edgemap and create DCEL
-    sweeper.y += 5;
+    // sweeper.y;
     for (auto it = edgemap.begin(); it != edgemap.end(); it++)
     {
         cout << i++ << " map entries" << endl;
