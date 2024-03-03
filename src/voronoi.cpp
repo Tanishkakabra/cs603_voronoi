@@ -5,9 +5,12 @@
 #include <iostream>
 using namespace std;
 
+
 Voronoi::Voronoi() {}
 
 Voronoi::~Voronoi() {}
+
+
 
 void Voronoi::construct(const std::vector<Point> &points)
 {
@@ -80,6 +83,7 @@ void Voronoi::construct(const std::vector<Point> &points)
         }
         // cout << "After handling event" << endl;
         print_T();
+        print_Q();
         // print_circlemap();
         // delete newevent;
     }
@@ -111,63 +115,63 @@ void Voronoi::handleSiteEvent(Point &event)
     // cout << "Before1" << endl;
     std::multiset<Site, ComparatorSet>::iterator prev = --next;
     next++;
-    cout << "Next breakpoint = " << find_breakpoint(next->first, next->second, next->n) << endl;
-    cout << "Prev breakpoint = " << find_breakpoint(prev->first, prev->second, prev->n) << endl;
+    // cout << "Next breakpoint = " << find_breakpoint(next->first, next->second, next->n) << endl;
+    // cout << "Prev breakpoint = " << find_breakpoint(prev->first, prev->second, prev->n) << endl;
     if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) < 0.0001) // insert at a breakpoint itself
     {
-        cout << "Insertion at a breakpoint bro" << endl;
+        // cout << "Insertion at a breakpoint bro" << endl;
 
-        if (fabs(find_breakpoint(prev->first, &event, 0) - event.x) < 0.0001)
-            T.insert({prev->first, &event, 0});
-        else
-            T.insert({prev->first, &event, 1});
-        if (fabs(find_breakpoint(&event, prev->second, 0) - event.x) < 0.0001)
-            T.insert({&event, prev->second, 0});
-        else
-            T.insert({&event, prev->second, 1});
+        // if (fabs(find_breakpoint(prev->first, &event, 0) - event.x) < 0.0001)
+        //     T.insert({prev->first, &event, 0});
+        // else
+        //     T.insert({prev->first, &event, 1});
+        // if (fabs(find_breakpoint(&event, prev->second, 0) - event.x) < 0.0001)
+        //     T.insert({&event, prev->second, 0});
+        // else
+        //     T.insert({&event, prev->second, 1});
 
-        Point *q = findLeaf(next, prev);
-        Point *edgeval = new Point();
-        *edgeval = {event.x, parabola_at_x(q), 0};
-        add_edge({prev->first, prev->second, prev->n}, edgeval);
-        add_edge({prev->first, &event, 0}, edgeval);
-        add_edge({prev->first, &event, 1}, edgeval);
+        // Point *q = findLeaf(next, prev);
+        // Point *edgeval = new Point();
+        // *edgeval = {event.x, parabola_at_x(q), 0};
+        // add_edge({prev->first, prev->second, prev->n}, edgeval);
+        // add_edge({prev->first, &event, 0}, edgeval);
+        // add_edge({prev->first, &event, 1}, edgeval);
 
-        std::multiset<Site, ComparatorSet>::iterator prev2 = --prev;
-        prev++;
-        Point *p = findLeaf(prev2, prev);
-        Point *pl;
-        if (prev2->first == p)
-            pl = prev2->second;
-        else
-            pl = prev2->first;
-        Point *pr;
+        // std::multiset<Site, ComparatorSet>::iterator prev2 = --prev;
+        // prev++;
+        // Point *p = findLeaf(prev2, prev);
+        // Point *pl;
+        // if (prev2->first == p)
+        //     pl = prev2->second;
+        // else
+        //     pl = prev2->first;
+        // Point *pr;
 
-        if (next->first == q)
-            pr = next->second;
-        else
-            pr = next->first;
+        // if (next->first == q)
+        //     pr = next->second;
+        // else
+        //     pr = next->first;
 
-        Point circ = find_circumcentre(p, q, &event);
-        if (circ.isCircleEvent == 1 && circlemap[{prev->first, &event, prev->second}] != -1)
-        {
-            Q.push(circ);
-            circlemap[{prev->first, &event, prev->second}] = 1;
-        }
-        Point circ2 = find_circumcentre(pl, p, &event);
-        if (circ2.isCircleEvent == 1 && circlemap[{pl, p, &event}] != -1)
-        {
-            Q.push(circ2);
-            circlemap[{pl, p, &event}] = 1;
-        }
-        Point circ3 = find_circumcentre(&event, q, pr);
-        if (circ3.isCircleEvent == 1 && circlemap[{&event, q, pr}] != -1)
-        {
-            Q.push(circ3);
-            circlemap[{&event, q, pr}] = 1;
-        }
-        T.erase(prev);
-        return;
+        // Point circ = find_circumcentre(p, q, &event);
+        // if (circ.isCircleEvent == 1 && circlemap[{prev->first, &event, prev->second}] != -1)
+        // {
+        //     Q.push(circ);
+        //     circlemap[{prev->first, &event, prev->second}] = 1;
+        // }
+        // Point circ2 = find_circumcentre(pl, p, &event);
+        // if (circ2.isCircleEvent == 1 && circlemap[{pl, p, &event}] != -1)
+        // {
+        //     Q.push(circ2);
+        //     circlemap[{pl, p, &event}] = 1;
+        // }
+        // Point circ3 = find_circumcentre(&event, q, pr);
+        // if (circ3.isCircleEvent == 1 && circlemap[{&event, q, pr}] != -1)
+        // {
+        //     Q.push(circ3);
+        //     circlemap[{&event, q, pr}] = 1;
+        // }
+        // T.erase(prev);
+        // return;
     }
     // cout << "Prev is: " << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
     // cout << "Before2" << endl;
@@ -629,5 +633,6 @@ void Voronoi::print_T()
     {
         cout << "Site: " << (it->first)->x << ", " << (it->first)->y << "    " << (it->second)->x << ", " << (it->second)->y << " " << it->n << endl;
         cout << find_breakpoint(it->first, it->second, it->n) << endl;
+        // cout << sweeper.y << endl;
     }
 }

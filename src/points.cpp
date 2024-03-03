@@ -27,6 +27,7 @@ void sortPoints(std::vector<Point> &points)
 }
 
 double find_breakpoint(Point *p1, Point *p2, int n)
+
 {
     double ly = sweeper.y;
     // if (n > 1)
@@ -61,31 +62,32 @@ double find_breakpoint(Point *p1, Point *p2, int n)
 
     if (a == 0)
         return c;
+    // cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
 
     double ans;
-    if (b * b - 4 * a * c1 < -0.0001)
-    {
-        cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
-        cout << b * b - 4 * a * c1 << endl;
-        return MAX_DOUBLE;
-    }
+    // if (b * b - 4 * a * c1 < -0.0001)
+    // {
+    //     cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
+    //     cout << b * b - 4 * a * c1 << endl;
+    //     return MAX_DOUBLE;
+    // }
 
-    if (b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
-    {
-        return -b / (2 * a);
-    }
+    // if (b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
+    // {
+    //     return -b / (2 * a);
+    // }
 
     if (n == 0)
-        ans = ((-1) * b - sqrt(b * b - 4 * a * c1)) / (2 * a);
+        ans = ((-1) * b - sqrt(fabs(b * b - 4 * a * c1))) / (2 * a);
     else if (n == 1)
-        ans = ((-1) * b + sqrt(b * b - 4 * a * c1)) / (2 * a);
+        ans = ((-1) * b + sqrt(fabs(b * b - 4 * a * c1))) / (2 * a);
     else if (n == 2)
     {
         // cout << "sweeper   " << sweeper.x << ", " << sweeper.y << endl;
         // cout << "m: " << m << " c: " << c << endl;
         // cout << "a: " << a << " b: " << b << " c1: " << c1 << endl;
-        cout << m * (((-1) * b - sqrt(b * b - 4 * a * c1)) / (2 * a)) + c << endl;
-        cout << m * (((-1) * b + sqrt(b * b - 4 * a * c1)) / (2 * a)) + c << endl;
+        cout << m * (((-1) * b - sqrt(fabs(b * b - 4 * a * c1))) / (2 * a)) + c << endl;
+        cout << m * (((-1) * b + sqrt(fabs(b * b - 4 * a * c1))) / (2 * a)) + c << endl;
     }
 
     return m * ans + c;
@@ -183,7 +185,7 @@ Point find_circumcentre(Point *p1, Point *p2, Point *p3)
         return {MAX_DOUBLE, MAX_DOUBLE, -1};
     }
 
-    y_U = y_U - sqrt((p1->x - x_U) * (p1->x - x_U) + (p1->y - y_U) * (p1->y - y_U));
+    y_U = y_U - sqrt(fabs((p1->x - x_U) * (p1->x - x_U) + (p1->y - y_U) * (p1->y - y_U)));
     // y_U now is the bottommost point of circle, not circumcentre
 
     if (y_U > sweeper.y)

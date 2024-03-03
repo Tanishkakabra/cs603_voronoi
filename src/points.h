@@ -8,9 +8,12 @@
 #include <algorithm>
 #include <cmath>
 
-// Structure to represent a point with x and y coordinates
+
+// to represent inf and -inf
 #define MIN_DOUBLE -1.0e+37
 #define MAX_DOUBLE 1.0e+37
+
+// Structure to represent a point with x and y coordinates
 struct Point
 {
     double x;
@@ -30,20 +33,14 @@ struct Point
     }
 };
 
+// Structure to represent an edge with start and end points
 struct EdgeData
 {
     Point *start;
-    // Point *vertex3;
     Point *end;
 };
 
-struct CirclePoints
-{
-    Point *pr;
-    Point *q;
-    Point *pl;
-};
-
+// Structure to represent a site (breakpoint) with 2 points and n = 0 or 1 to decide which of the 2 x coordinates to use
 struct Site
 {
     Point *first;
@@ -51,26 +48,33 @@ struct Site
     int n;
 };
 
+// Custom comparator for set of sites
 struct ComparatorSet
 {
     bool operator()(Site p1, Site p2) const;
 };
 
+// Custom comparator for priority queue of points
 struct ComparatorQueue
 {
     bool operator()(Point p1, Point p2) const;
 };
 
+// Custom comparator for map of sites
 struct ComparatorMap
 {
     bool operator()(const Site &a, const Site &b) const;
 };
 
 bool comparePoints(const Point &p1, const Point &p2);
+
 void sortPoints(std::vector<Point> &points);
-std::vector<Point> parseCSV(const std::string &filename);
+
+// std::vector<Point> parseCSV(const std::string &filename);
+// find the breakpoint of 2 parabolas given their focus points and n = 0 or 1 to decide which of the 2 x coordinates to use
 double find_breakpoint(Point *p1, Point *p2, int n);
 
+// find the circumcentre event (bottommost point of the circle and not the actual circumcentre lol) of 3 points
 Point find_circumcentre(Point *p1, Point *p2, Point *p3);
 
 #endif // POINTS_H

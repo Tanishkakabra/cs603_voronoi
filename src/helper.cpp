@@ -1,5 +1,6 @@
 #include "helper.h"
 #include <iostream>
+#include <random>
 using namespace std;
 
 // Function to parse a CSV file and create a vector of points
@@ -15,6 +16,10 @@ std::vector<Point> parseCSV(const std::string &filename)
         return points;
     }
     // cout << "File opened1" << endl;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::normal_distribution<double> dist(0, 0.01);
+    double noise;
     std::string line;
     while (std::getline(file, line))
     {
@@ -23,8 +28,12 @@ std::vector<Point> parseCSV(const std::string &filename)
         std::string token;
         std::getline(iss, token, ','); // Read x coordinate
         double x = std::stod(token);
+        noise = dist(gen);
+        x += noise;
+        noise = dist(gen);
         std::getline(iss, token, ','); // Read y coordinate
         double y = std::stod(token);
+        y += noise;
         points.push_back({x, y, false});
     }
     // cout << "File closed" << endl;
