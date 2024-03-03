@@ -1,6 +1,6 @@
 import random
 
-n = 1000
+n = 500
 
 for i in range(n):
     x = random.random()

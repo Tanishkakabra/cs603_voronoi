@@ -65,17 +65,6 @@ double find_breakpoint(Point *p1, Point *p2, int n)
     // cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
 
     double ans;
-    // if (b * b - 4 * a * c1 < -1e-4)
-    // {
-    //     cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
-    //     cout << b * b - 4 * a * c1 << endl;
-    //     return MAX_DOUBLE;
-    // }
-
-    // if (b * b - 4 * a * c1 > -1e-4 && b * b - 4 * a * c1 < 0)
-    // {
-    //     return -b / (2 * a);
-    // }
 
     if (n == 0)
         ans = ((-1) * b - sqrt(fabs(b * b - 4 * a * c1))) / (2 * a);
