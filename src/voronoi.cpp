@@ -5,12 +5,9 @@
 #include <iostream>
 using namespace std;
 
-
 Voronoi::Voronoi() {}
 
 Voronoi::~Voronoi() {}
-
-
 
 void Voronoi::construct(const std::vector<Point> &points)
 {
@@ -27,13 +24,16 @@ void Voronoi::construct(const std::vector<Point> &points)
         if (points[i].y > BOUNDmaxy && points[i].y != MAX_DOUBLE)
             BOUNDmaxy = points[i].y;
         Q.push(points[i]);
+        cout << "Bounding values: " << BOUNDminx << ", " << BOUNDmaxx << ", " << BOUNDminy << ", " << BOUNDmaxy << endl;
     }
+
     cout << "Queue pushed" << endl;
 
-    BOUNDmaxx += 10;
-    BOUNDminx -= 10;
-    BOUNDmaxy += 10;
-    BOUNDminy -= 10;
+    BOUNDmaxx += 100;
+    BOUNDminx -= 100;
+    BOUNDmaxy += 100;
+    BOUNDminy -= 100;
+    cout << "Bounding values: " << BOUNDminx << ", " << BOUNDmaxx << ", " << BOUNDminy << ", " << BOUNDmaxy << endl;
     Point event1 = Q.top();
     sweeper = event1;
     Q.pop();
@@ -55,14 +55,14 @@ void Voronoi::construct(const std::vector<Point> &points)
         Q.pop();
         sweeper = *newevent;
 
-        if (newevent->x > BOUNDmaxx && newevent->x != MAX_DOUBLE)
-            BOUNDmaxx = newevent->x;
-        if (newevent->x < BOUNDminx && newevent->x != MIN_DOUBLE)
-            BOUNDminx = newevent->x;
-        if (newevent->y > BOUNDmaxy && newevent->y != MAX_DOUBLE)
-            BOUNDmaxy = newevent->y;
-        if (newevent->y < BOUNDminy && newevent->y != MIN_DOUBLE)
-            BOUNDminy = newevent->y;
+        // if (newevent->x > BOUNDmaxx && newevent->x != MAX_DOUBLE)
+        //     BOUNDmaxx = newevent->x;
+        // if (newevent->x < BOUNDminx && newevent->x != MIN_DOUBLE)
+        //     BOUNDminx = newevent->x;
+        // if (newevent->y > BOUNDmaxy && newevent->y != MAX_DOUBLE)
+        //     BOUNDmaxy = newevent->y;
+        // if (newevent->y < BOUNDminy && newevent->y != MIN_DOUBLE)
+        //     BOUNDminy = newevent->y;
 
         // cout << "Before even calling site or circle event2" << endl;
         // print_T();
@@ -117,15 +117,15 @@ void Voronoi::handleSiteEvent(Point &event)
     next++;
     // cout << "Next breakpoint = " << find_breakpoint(next->first, next->second, next->n) << endl;
     // cout << "Prev breakpoint = " << find_breakpoint(prev->first, prev->second, prev->n) << endl;
-    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) < 0.0001) // insert at a breakpoint itself
+    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) < 1e-4) // insert at a breakpoint itself
     {
         // cout << "Insertion at a breakpoint bro" << endl;
 
-        // if (fabs(find_breakpoint(prev->first, &event, 0) - event.x) < 0.0001)
+        // if (fabs(find_breakpoint(prev->first, &event, 0) - event.x) < 1e-4)
         //     T.insert({prev->first, &event, 0});
         // else
         //     T.insert({prev->first, &event, 1});
-        // if (fabs(find_breakpoint(&event, prev->second, 0) - event.x) < 0.0001)
+        // if (fabs(find_breakpoint(&event, prev->second, 0) - event.x) < 1e-4)
         //     T.insert({&event, prev->second, 0});
         // else
         //     T.insert({&event, prev->second, 1});
@@ -286,7 +286,7 @@ void Voronoi::handleCircleEvent(Point &event)
     curr++;
 
     // to call out false alarms
-    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) > 0.0001 || fabs(find_breakpoint(curr->first, curr->second, curr->n) - event.x) > 0.0001)
+    if (fabs(find_breakpoint(prev->first, prev->second, prev->n) - event.x) > 1e-4 || fabs(find_breakpoint(curr->first, curr->second, curr->n) - event.x) > 1e-4)
     {
         cout << "FALSE ALARM I REPEAT FALSE ALARM AAAAAAA" << endl;
         cout << prev->first->x << ", " << prev->first->y << "   " << prev->second->x << ", " << prev->second->y << "   " << prev->n << endl;
@@ -350,13 +350,13 @@ void Voronoi::handleCircleEvent(Point &event)
     // cout << "Purely for debugging purposes0" << endl;
     // print_T();
     // cout << "Trying to add a new node" << endl;
-    if (fabs(find_breakpoint(pl, pr, 0) - event.x) < 0.0001) // delete the 2 nodes and introduce 1 node instead.
+    if (fabs(find_breakpoint(pl, pr, 0) - event.x) < 1e-4) // delete the 2 nodes and introduce 1 node instead.
     {
         // cout << "Ill let you know when i get here 0" << endl;
         s = {pl, pr, 0};
         T.insert(s);
     }
-    else if (fabs(find_breakpoint(pl, pr, 1) - event.x) < 0.0001)
+    else if (fabs(find_breakpoint(pl, pr, 1) - event.x) < 1e-4)
     {
         // cout << "Ill let you know when i get here 1" << endl;
         s = {pl, pr, 1};
@@ -364,7 +364,7 @@ void Voronoi::handleCircleEvent(Point &event)
     }
     else
     {
-        cout << "Ummm how the hap is this fuckening?" << endl;
+        cout << "Ummm how the hap is this evening?" << endl;
     }
     // cout << "Purely for debugging purposes1" << endl;
     // print_T();
@@ -493,20 +493,21 @@ void Voronoi::finalizeDiagram()
         cout << i++ << " map entries" << endl;
         if (it->second.start != nullptr && it->second.end != nullptr) // complete edge
         {
-            cout << it->first.first->x << ", " << it->first.first->y << "   " << it->first.second->x << ", " << it->first.second->y << endl;
-            cout << it->second.start->x << ", " << it->second.start->y << "   " << it->second.end->x << ", " << it->second.end->y << endl;
+            // cout << it->first.first->x << ", " << it->first.first->y << "   " << it->first.second->x << ", " << it->first.second->y << endl;
+            // cout << it->second.start->x << ", " << it->second.start->y << "   " << it->second.end->x << ", " << it->second.end->y << endl;
+
             edgelist.push_back(make_pair(it->second.start, it->second.end));
         }
         else if (it->second.start != nullptr && it->second.end == nullptr) // half edge
         {
             Point *p = new Point();
-            *p = find_bound_box_intersection(it->first);
+            *p = find_bound_box_intersection(it->first, it->second);
             it->second.end = p;
-            cout << "Found bound box intersection: ";
-            cout << p->x << ", " << p->y << endl;
-            cout << it->second.start->x << ", " << it->second.start->y << endl;
-            cout << it->second.end->x << ", " << it->second.end->y << endl;
-            cout << it->first.first->x << ", " << it->first.first->y << "   " << it->first.second->x << ", " << it->first.second->y << endl;
+            // cout << "Found bound box intersection: ";
+            // cout << p->x << ", " << p->y << endl;
+            // cout << it->second.start->x << ", " << it->second.start->y << endl;
+            // cout << it->second.end->x << ", " << it->second.end->y << endl;
+            // cout << it->first.first->x << ", " << it->first.first->y << "   " << it->first.second->x << ", " << it->first.second->y << endl;
             edgelist.push_back(make_pair(it->second.start, it->second.end));
         }
         else
@@ -569,7 +570,7 @@ Point *Voronoi::findLeaf(std::multiset<Site, ComparatorSet>::iterator next, std:
     return nullptr;
 }
 
-Point Voronoi::find_bound_box_intersection(Site s)
+Point Voronoi::find_bound_box_intersection(Site s, EdgeData edge)
 {
     // calculate perpendicular bisector of the 2 points
     Point *p = s.first;
@@ -577,22 +578,30 @@ Point Voronoi::find_bound_box_intersection(Site s)
     // Point *r = edge.vertex3;
     double x = find_breakpoint(p, q, s.n);
     double y = parabolaatx(p, x);
+    edge.end = new Point();
+    edge.end->x = x;
+    edge.end->y = y;
     if (x == 0 && y == 0)
         cout << "Panik! found the 0000000000000000000000000000000000000000000000000" << endl;
     // if (x > BOUNDmaxx)
     // {
     //     x = BOUNDmaxx;
-    //     y = parabolaatx(p, x);
+    //     y = edge.start->y + x * (edge.end->y - edge.start->y) / (edge.end->x - edge.start->x);
     // }
-    // if (x < BOUNDminx)
+    // else if (x < BOUNDminx)
     // {
     //     x = BOUNDminx;
-    //     y = parabolaatx(p, x);
+    //     y = edge.start->y + x * (edge.end->y - edge.start->y) / (edge.end->x - edge.start->x);
     // }
-    // if (y > BOUNDmaxy)
+    // else if (y > BOUNDmaxy)
     // {
     //     y = BOUNDmaxy;
-    //     x = edge.start->x + y *
+    //     x = edge.start->x + y * (edge.end->x - edge.start->x) / (edge.end->y - edge.start->y);
+    // }
+    // else if (y < BOUNDminy)
+    // {
+    //     y = BOUNDminy;
+    //     x = edge.start->x + y * (edge.end->x - edge.start->x) / (edge.end->y - edge.start->y);
     // }
     return {x, y, false};
 }

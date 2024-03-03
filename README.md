@@ -8,10 +8,21 @@ src - contains the source code
     voronoi.cpp / voronoi.h - contains the Voronoi class and the major functions to calculate the voronoi diagram
     main.cpp - uses the voronoi class to work upon the points given by input.csv
 Makefile - run make to compile
+input.csv - The input file in csv format
 my_program - the executable. Run 
         ./my_program input.csv > debug.txt
 debug.txt - Contains logs of the debugging print statements
 output.csv - contains the edgelist in the form point1.x, point1.y, point2.x, point2.y
 plot.py - run
         python3 plot.py
-draws and shows the plot.
+        draws and shows the plot.
+bounding_values.csv - Contains information for plot.py to limit the x and y axis; used to make the plot look better
+rand.py - creates random points that can be redirected to input.csv. Parameters and number of points can be changed in file itself
+
+
+Effectively, run
+make
+python3 rand.py > input.csv
+./my_program input.csv > debug.txt
+python3 plot.py 
+

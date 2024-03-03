@@ -66,11 +66,12 @@ struct ComparatorMap
     bool operator()(const Site &a, const Site &b) const;
 };
 
+//this function isnt really used anywhere, but i wrote it anyways
 bool comparePoints(const Point &p1, const Point &p2);
 
+//this function isnt really used anywhere, but i wrote it anyways
 void sortPoints(std::vector<Point> &points);
 
-// std::vector<Point> parseCSV(const std::string &filename);
 // find the breakpoint of 2 parabolas given their focus points and n = 0 or 1 to decide which of the 2 x coordinates to use
 double find_breakpoint(Point *p1, Point *p2, int n);
 

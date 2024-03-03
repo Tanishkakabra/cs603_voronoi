@@ -6,7 +6,7 @@ using namespace std;
 
 // Custom comparison function to sort points by y-coordinate with x-coordinate as tiebreaker
 
-double BOUNDmaxx = MAX_DOUBLE;
+double BOUNDmaxx = MIN_DOUBLE;
 double BOUNDminx = MAX_DOUBLE;
 double BOUNDminy = MAX_DOUBLE;
 double BOUNDmaxy = MIN_DOUBLE;
@@ -65,14 +65,14 @@ double find_breakpoint(Point *p1, Point *p2, int n)
     // cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
 
     double ans;
-    // if (b * b - 4 * a * c1 < -0.0001)
+    // if (b * b - 4 * a * c1 < -1e-4)
     // {
     //     cout << "m :" << m << " c: " << c << " a: " << a << " b: " << b << " c1: " << c1 << endl;
     //     cout << b * b - 4 * a * c1 << endl;
     //     return MAX_DOUBLE;
     // }
 
-    // if (b * b - 4 * a * c1 > -0.0001 && b * b - 4 * a * c1 < 0)
+    // if (b * b - 4 * a * c1 > -1e-4 && b * b - 4 * a * c1 < 0)
     // {
     //     return -b / (2 * a);
     // }
@@ -97,7 +97,7 @@ bool ComparatorSet::operator()(Site p1, Site p2) const
 {
     double ans1 = find_breakpoint(p1.first, p1.second, p1.n);
     double ans2 = find_breakpoint(p2.first, p2.second, p2.n);
-    // if (fabs(ans1 - ans2) < 0.0001)
+    // if (fabs(ans1 - ans2) < 1e-4)
     // { // same x coordinate for breakpoint, ab kya karu?
     //     if (p1.first->x > p2.first->x)
     //         return true;
@@ -116,7 +116,7 @@ bool ComparatorSet::operator()(Site p1, Site p2) const
     //     else if (p1.second->y < p2.second->y)
     //         return false;
     // }
-    if (fabs(ans1 - ans2) > 0.0001)
+    if (fabs(ans1 - ans2) > 1e-4)
         return ans1 < ans2;
     else
         return false;

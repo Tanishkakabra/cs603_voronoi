@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 # Read data from the output.csv file (assuming it has columns: point1.x, point1.y, point2.x, point2.y)
 df_output = pd.read_csv("output.csv")
 
+bounds = pd.read_csv("bounding_values.csv", header=None)
+xlimlow = bounds.iloc[0, 0]
+ylimlow = bounds.iloc[0, 1]
+xlimhigh = bounds.iloc[0, 2]
+ylimhigh = bounds.iloc[0, 3]
+
+# Extract values for xlimlow, ylimlow, xlimhigh, ylimhigh from the first row
 # Create a scatter plot of point1
 plt.scatter(df_output["point1.x"], df_output["point1.y"], label="Point 1", color="blue")
 
@@ -28,6 +35,10 @@ plt.scatter(x_input, y_input, label="Input Points", color="green", marker="o")
 
 # Set equal aspect ratio for the plot
 plt.axis("equal")
+
+# Set xlim and ylim
+plt.xlim(xlimlow, xlimhigh)
+plt.ylim(ylimlow, ylimhigh)
 
 # Add labels and title
 plt.xlabel("X Coordinate")

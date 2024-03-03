@@ -1,6 +1,7 @@
 #include "helper.h"
 #include <iostream>
 #include <random>
+#include "global.h"
 using namespace std;
 
 // Function to parse a CSV file and create a vector of points
@@ -18,7 +19,7 @@ std::vector<Point> parseCSV(const std::string &filename)
     // cout << "File opened1" << endl;
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::normal_distribution<double> dist(0, 0.01);
+    std::normal_distribution<double> dist(0, 1e-3);
     double noise;
     std::string line;
     while (std::getline(file, line))
@@ -42,6 +43,7 @@ std::vector<Point> parseCSV(const std::string &filename)
     return points;
 }
 
+//Function to finally give the output to output.txt
 void saveEdgelistToCSV(const std::vector<std::pair<Point *, Point *>> &edgelist, const std::string &filename)
 {
     std::ofstream outfile(filename);
@@ -50,10 +52,16 @@ void saveEdgelistToCSV(const std::vector<std::pair<Point *, Point *>> &edgelist,
         std::cerr << "Error opening file: " << filename << std::endl;
         return;
     }
+    std::ofstream boundfile("bounding_values.csv");
+    if (!boundfile.is_open())
+    {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
 
     // Write header (optional)
     outfile << "point1.x,point1.y,point2.x,point2.y" << std::endl;
-
+    boundfile << BOUNDminx << "," << BOUNDminy << "," << BOUNDmaxx << "," << BOUNDmaxy << std::endl;
     // Write each edge
     for (const auto &edge : edgelist)
     {

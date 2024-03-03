@@ -60,7 +60,7 @@ private:
     void add_edge(Site s, Point *event);
 
     // function to complete half edges
-    Point find_bound_box_intersection(Site s);
+    Point find_bound_box_intersection(Site s, EdgeData edge);
 
     // debugging funcions to print the status structure, event queue, edgemap and circlemap
     void print_edgemap();
